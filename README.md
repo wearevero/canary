@@ -25,15 +25,15 @@ To be able to run this project, several supporting tools are needed, such as:
 
 ## Run development mode
 
-1. Clone this project with the command: `git clone https://github.com/wearevero/VR.git`
+1. Clone this project: `git clone https://github.com/wearevero/VR.git`
 
-2. open double bash in the VR directory: one to run node js the other to run composer engine.
+2. Open **double** `bash` in the VR directory: one to run node js the other to run composer engine.
 
-3. install all required php dependencies with the command `composer install --ignore-platform-req=ext-gd` and... wait for the apocalypse, just kidding.
+3. Install all required php dependencies with the command `composer install --ignore-platform-req=ext-gd` and... wait for the apocalypse, just kidding.
 
-4. on another bash, run the command `npm install --legacy-peer-deps` to install the dependencies related to the required assets.
+4. On another `bash`, run the command `npm install --legacy-peer-deps` to install the dependencies related to the required assets.
 
-5. genrate key `php artisan key:generate`
+5. Generate key `php artisan key:generate`
 
 6. Make database
 
@@ -43,7 +43,7 @@ To be able to run this project, several supporting tools are needed, such as:
 
 9. Seed default data `php artisan db:seed`
 
-10. Checking the halth? `php artisan health:check`
+10. Checking the health? `php artisan health:check`
 
 11. Take a look on your browser at: `127.0.0.1:8000`
 
@@ -63,7 +63,7 @@ Please review and abide our [Code of Conduct](./CODE_OF_CONDUCT.md).
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to our team via [kridoveronique@gmail.com](mailto:kridoveronique@gmail.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability, please send an e-mail to me via [kridoveronique@gmail.com](mailto:kridoveronique@gmail.com). All security vulnerabilities will be promptly addressed.
 
 ## Maintainer
 
