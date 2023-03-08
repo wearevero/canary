@@ -1,4 +1,7 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center">
+<a target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
+</a>
+</p>
 
 
 # The Veronique's Stack
@@ -6,7 +9,7 @@
 ***We Believe, Every Piece of Jewerly Tells a Radiant Story.***
 
 VR is a boilerplate that ready-to-use for production.
-And its using [Laravel](https://laravel.com) — Laravel is a web application framework with expressive, elegant syntax. 
+The good news is, this project is build on top of [Laravel](https://laravel.com) — Laravel is a web application framework with expressive, elegant syntax. 
 
 We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development.
 
@@ -18,10 +21,16 @@ The motivation behind making this project is to standardize and make it easier t
 
 To be able to run this project, several supporting tools are needed, such as:
 
-- Web server i.e: `xampp`, `lampp` or `mapp`
-- Core language `php ^8.x`
-- JavaScript runtime like `Node Js`
-- Package manager for `composer` 
+- Web server i.e: `xampp`, `lampp` or `mampp`
+- Core language: `php ^8.x`
+- JavaScript runtime like: `Node Js`
+- Package manager for php, i.e: `composer`
+
+## Dependency & Built-in scaffolding
+1. Laravel UI for manage login & register related thing
+2. Laravel Pint for code styling
+3. Spatie Laravel health for checking the health in app
+4. Tailwindcss for create good-looking interface
 
 ## Run development mode
 
