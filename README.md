@@ -58,7 +58,12 @@ To be able to run this project, several supporting tools are needed, such as:
 
 ## Run the testing
 
-Upsss... there's not testing library to this project.
+For tinkering with testing related-thing, by default this poject is using [Pest php](https://pestphp.com/) library. 
+
+For running testing, you can use this command: 
+```php
+php artisn test
+```
 
 ## Run for production
 1. Install autoloader optimization `composer require --optimize-autoloader --ignore-platform-req=ext-gd`
