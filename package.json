@@ -1,4 +1,5 @@
 {
+    "name": "@wearevero/vr",
     "private": true,
     "scripts": {
         "dev": "vite",

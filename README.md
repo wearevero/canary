@@ -65,6 +65,13 @@ For running testing, you can use this command:
 php artisn test
 ```
 
+## Code formatting
+We use [Laravel Pint](https://laravel.com/docs/10.x/pint) package for making this code base to more human readability.
+You can run with this command:
+```php
+./vendor/bin/pint
+```
+
 ## Run for production
 1. Install autoloader optimization `composer require --optimize-autoloader --ignore-platform-req=ext-gd`
 
