@@ -12,10 +12,14 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::get();
+        if ($request->keyword) {
+            $users = User::search($request->keyword)->get();
+        } else {
+            $users = User::all();
+        }
+
         return view('users.index', compact('users'));
     }
 
@@ -26,9 +30,6 @@ class ProfileController extends Controller
         ]);
     }
 
-    /**
-     * Update the user's profile information.
-     */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
         $request->user()->fill($request->validated());
@@ -42,9 +43,6 @@ class ProfileController extends Controller
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
-    /**
-     * Delete the user's account.
-     */
     public function destroy(Request $request): RedirectResponse
     {
         $request->validateWithBag('userDeletion', [

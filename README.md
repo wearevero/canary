@@ -3,13 +3,12 @@
 </a>
 </p>
 
+# Canary
 
-# The Veronique's Stack
-
-***We Believe, Every Piece of Jewerly Tells a Radiant Story.***
+**_We Believe, Every Piece of Jewerly Tells a Radiant Story._**
 
 VR is a boilerplate that ready-to-use for production.
-The good news is, this project is build on top of [Laravel](https://laravel.com) — Laravel is a web application framework with expressive, elegant syntax. 
+The good news is, this project is build on top of [Laravel](https://laravel.com) — Laravel is a web application framework with expressive, elegant syntax.
 
 We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development.
 
@@ -21,12 +20,13 @@ The motivation behind making this project is to standardize and make it easier t
 
 To be able to run this project, several supporting tools are needed, such as:
 
-- Web server i.e: `xampp`, `lampp` or `mampp`
-- Core language: `php ^8.x`
-- JavaScript runtime like: `Node Js`
-- Package manager for php, i.e: `composer`
+-   Web server i.e: `xampp`, `lampp` or `mampp`
+-   Core language: `php ^8.x`
+-   JavaScript runtime like: `Node Js`
+-   Package manager for php, i.e: `composer`
 
 ## Dependency & Built-in scaffolding
+
 1. Laravel UI for manage login & register related thing
 2. Laravel Pint for code styling
 3. Spatie Laravel health for checking the health in app
@@ -58,25 +58,28 @@ To be able to run this project, several supporting tools are needed, such as:
 
 ## Run the testing
 
-For tinkering with testing related-thing, by default this poject is using [Pest php](https://pestphp.com/) library. 
+For tinkering with testing related-thing, by default this poject is using [Pest php](https://pestphp.com/) library.
 
-For running testing, you can use this command: 
+For running testing, you can use this command:
+
 ```php
 php artisn test
 ```
 
 ## Code formatting
+
 We use [Laravel Pint](https://laravel.com/docs/10.x/pint) package for making this code base to more human readability.
 You can run with this command:
+
 ```php
 ./vendor/bin/pint
 ```
 
 ## Run for production
+
 1. Install autoloader optimization `composer require --optimize-autoloader --ignore-platform-req=ext-gd`
 
-2. Let's optimize it! `php artisan optimize` 
-
+2. Let's optimize it! `php artisan optimize`
 
 ## Code of Conduct
 
@@ -88,7 +91,7 @@ If you discover a security vulnerability, please send an e-mail to me via [krido
 
 ## Maintainer
 
-- [Krido](https://github.com/yuxxeun)
+-   [Krido](https://github.com/yuxxeun)
 
 ## License
 
