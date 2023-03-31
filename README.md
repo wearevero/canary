@@ -7,14 +7,12 @@
 
 **_We Believe, Every Piece of Jewerly Tells a Radiant Story._**
 
-VR is a boilerplate that ready-to-use for production.
-The good news is, this project is build on top of [Laravel](https://laravel.com) — Laravel is a web application framework with expressive, elegant syntax.
+Canary is a small software on the internet.
 
-We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development.
 
 ## Motivation
 
-The motivation behind making this project is to standardize and make it easier to create applications with complex features, by using this project we hope to get it done faster.
+testing our skill set.
 
 ## Pre-requisite
 
@@ -31,16 +29,17 @@ To be able to run this project, several supporting tools are needed, such as:
 2. Laravel Pint for code styling
 3. Spatie Laravel health for checking the health in app
 4. Tailwindcss for create good-looking interface
+5. Laravel scout for handling driver based solution full-text search in eloquent models
 
 ## Run development mode
 
-1. Clone this project: `git clone https://github.com/wearevero/VR.git`
+1. Clone this project: `git clone https://github.com/wearevero/canary.git`
 
-2. Open **double** `bash` in the VR directory: one to run node js the other to run composer engine.
+2. Open **double** `bash` in the `canary` directory: one to run node js the other to run composer engine.
 
-3. Install all required php dependencies with the command `composer install --ignore-platform-req=ext-gd` and... wait for the apocalypse, just kidding.
+3. Install all required php dependencies with the command `composer install` and... wait for the apocalypse, just kidding.
 
-4. On another `bash`, run the command `npm install --legacy-peer-deps` to install the dependencies related to the required assets.
+4. On another `bash`, run the command `npm install` to install the dependencies related to the required assets.
 
 5. Generate key `php artisan key:generate`
 
@@ -95,4 +94,4 @@ If you discover a security vulnerability, please send an e-mail to me via [krido
 
 ## License
 
-VR is open-sourced software licensed under the [MIT License](./LICENSE).
+Canary is open-sourced software licensed under the [MIT License](./LICENSE).

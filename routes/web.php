@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
 Route::get('health', HealthCheckResultsController::class)->name('health');
+Route::view('/', 'auth.login');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -47,5 +48,6 @@ Route::controller(ProductController::class)
         Route::post('/updates/{id}', 'update')->name('products.update');
         Route::delete('/delete/{id}', 'destroy')->name('products.delete');
     });
+
 
 require __DIR__.'/auth.php';

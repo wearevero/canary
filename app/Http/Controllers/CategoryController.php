@@ -1,16 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Category;
 use Illuminate\Http\Request;
 
-class CatalogueController extends Controller
+class CategoryController extends Controller
 {
     public function index()
     {
-        $categorys = Category::get();
-        return view('catalogue.index', compact('categorys'));
+ 
+        
     }
 
     public function create()
@@ -18,9 +16,6 @@ class CatalogueController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         //

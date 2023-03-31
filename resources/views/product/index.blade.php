@@ -23,7 +23,7 @@
                             <th scope="col" class="px-6 py-4">ID</th>
                             <th scope="col" class="px-6 py-4">No. Item</th>
                             <th scope="col" class="px-6 py-4">Kode Barang</th>
-                            <th scope="col" class="px-6 py-4">Created</th>
+                            <th scope="col" class="px-6 py-4">Created at</th>
                             <th scope="col" class="px-6 py-4">Action</th>
                           </tr>
                         </thead>

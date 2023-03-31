@@ -10,6 +10,11 @@ class Product extends Model
 {
     use HasFactory, Searchable;
 
+    protected $fillable = [
+        'no_item',
+        'kode_barang'
+    ];
+    
     public function toSearchableArray(): array
     {
         return [
@@ -18,8 +23,8 @@ class Product extends Model
         ];
     }
 
-    protected $fillable = [
-        'no_item',
-        'kode_barang'
-    ];
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

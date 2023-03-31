@@ -9,7 +9,7 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         if ($request->keyword) {
-            $products = Product::search($request->keyword)->get();
+            $products = Product::search($request->keyword)->select('id', 'no_item', 'kode_barang')->get();
         } else {
             $products = Product::all();
         }
