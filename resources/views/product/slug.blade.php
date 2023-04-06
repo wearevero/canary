@@ -15,6 +15,7 @@
                             <th scope="col" class="px-6 py-4">ID</th>
                             <th scope="col" class="px-6 py-4">No. Item</th>
                             <th scope="col" class="px-6 py-4">Kode Barang</th>
+                            <th scope="col" class="px-6 py-4">Gambar</th>
                             <th scope="col" class="px-6 py-4">Created</th>
                           </tr>
                         </thead>
@@ -23,6 +24,9 @@
                                     <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $product->id }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $product->no_item }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $product->kode_barang }}</td>
+                                    <td>
+                                      <img src="{{ asset('image/'.$product->image) }}" alt="gambar {{$product->no_item}}" width="100" height="100"/>
+                                    </td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $product->created_at }}</td>
                                 </tr>
                         </tbody>

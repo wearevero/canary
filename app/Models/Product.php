@@ -12,7 +12,9 @@ class Product extends Model
 
     protected $fillable = [
         'no_item',
-        'kode_barang'
+        'kode_barang',
+        'id_kategori',
+        'image',
     ];
     
     public function toSearchableArray(): array
@@ -20,6 +22,7 @@ class Product extends Model
         return [
             'no_item' => $this->no_item,
             'kode_barang' => $this->kode_barang,
+            'id_kategori' => $this->id_kategori,
         ];
     }
 

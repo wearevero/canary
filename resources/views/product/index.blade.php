@@ -10,6 +10,15 @@
                         <a href="{{ route('products.create') }}" class="px-3 py-2 hover:bg-green-300/10 border rounded-lg bg-green-500/10 text-green-500 border-green-800">
                             Add product +
                         </a>
+                        
+                        {{-- alert testing --}}
+                        @if ($message = Session::get('success'))
+                            <div class="">
+                                <p>{{ $message }}</p>
+                            </div>
+                        @endif
+                        {{-- end --}}
+
                         <form method="get">
                             <input type="text" name="keyword" class="px-3 py-2 border rounded-lg border-slate-500" placeholder="VR12345" />
                             <button type="submit" class="bg-sky-800/10 border border-sky-800 text-sky-500 py-2 px-3 rounded-lg hover:bg-sky-300/20">
@@ -23,25 +32,31 @@
                             <th scope="col" class="px-6 py-4">ID</th>
                             <th scope="col" class="px-6 py-4">No. Item</th>
                             <th scope="col" class="px-6 py-4">Kode Barang</th>
-                            <th scope="col" class="px-6 py-4">Created at</th>
+                            <th scope="col" class="px-6 py-4">Kategori</th>
+                            <th scope="col" class="px-6 py-4">Gambar</th>
+                            <th scope="col" class="px-6 py-4">Waktu input</th>
                             <th scope="col" class="px-6 py-4">Action</th>
                           </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="">
                             @foreach($products as $product)
                                 <tr class="border-b dark:border-neutral-500">
-                                    <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $product->id }}</td>
+                                    <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $no++ }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $product->no_item }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $product->kode_barang }}</td>
+                                    <td class="whitespace-nowrap px-6 py-4">{{ $product->id_kategori }}</td>
+                                    <td>
+                                        <img src="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}" alt="{{ $product->no_item }} tidak memiliki gambar" height="80" width="80" class="py-2 mx-auto rounded-md"/>
+                                    </td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $product->created_at }}</td>
-                                    <td class="whitespace-nowrap px-6 py-4 flex justify-between items-center">
+                                    <td class="whitespace-nowrap px-6 m-auto flex align-middle justify-between py-12 items-center">
                                         <a href="{{ route('products.show', $product->id) }}">
                                             <x-feathericon-info class="text-sky-500 hover:text-sky-400" />
                                         </a>
                                         <a href="{{ route('products.edit', $product->id) }}">
                                             <x-feathericon-edit class="text-green-500 hover:text-green-400" />
                                         </a>
-                                        <form action="{{ route('products.delete', $product->id) }}" method="post">
+                                        <form action="{{ route('products.delete', $product->id) }}" class="flex" method="post">
                                             @method('delete')
                                             @csrf
                                             <button type="submit">

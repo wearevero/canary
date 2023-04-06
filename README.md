@@ -3,16 +3,17 @@
 </a>
 </p>
 
-# Canary
+# Sample®️
 
 **_We Believe, Every Piece of Jewerly Tells a Radiant Story._**
 
-Canary is a small software on the internet.
+Veronique open-source sample system. 
+Using HMVC-ready architecture by default. 
 
 
 ## Motivation
 
-testing our skill set.
+To manage sample-related stuff.
 
 ## Pre-requisite
 
@@ -33,9 +34,9 @@ To be able to run this project, several supporting tools are needed, such as:
 
 ## Run development mode
 
-1. Clone this project: `git clone https://github.com/wearevero/canary.git`
+1. Clone this project: `git clone https://github.com/wearevero/sample.git`
 
-2. Open **double** `bash` in the `canary` directory: one to run node js the other to run composer engine.
+2. Open **double** `bash` in the `sample` directory: one to run node js the other to run composer engine.
 
 3. Install all required php dependencies with the command `composer install` and... wait for the apocalypse, just kidding.
 
@@ -76,7 +77,7 @@ You can run with this command:
 
 ## Run for production
 
-1. Install autoloader optimization `composer require --optimize-autoloader --ignore-platform-req=ext-gd`
+1. Install autoloader optimization `composer require --optimize-autoloader`
 
 2. Let's optimize it! `php artisan optimize`
 
@@ -94,4 +95,4 @@ If you discover a security vulnerability, please send an e-mail to me via [krido
 
 ## License
 
-Canary is open-sourced software licensed under the [MIT License](./LICENSE).
+Sample®️ is open-sourced software licensed under the [MIT License](./LICENSE).

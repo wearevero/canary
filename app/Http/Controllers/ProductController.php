@@ -9,12 +9,11 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         if ($request->keyword) {
-            $products = Product::search($request->keyword)->select('id', 'no_item', 'kode_barang')->get();
+            $products = Product::search($request->keyword)->get();
         } else {
-            $products = Product::all();
+            $products = Product::get();
         }
-
-        return view('product.index', compact('products'));
+        return view('product.index', compact('products'))->with('no', 1);
     }
 
     public function create()
@@ -27,9 +26,20 @@ class ProductController extends Controller
         $request->validate([
             'no_item' => 'required',
             'kode_barang' => 'required',
+            'id_kategori' => 'required',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
         ]);
-        Product::create($request->all());
-        return redirect()->route('products.index');
+
+        $input = $request->all();
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
+
+        Product::create($input);
+        return redirect()->route('products.index')->with('success', 'Success ading product 😾👍');
     }
 
     public function show($id)
@@ -45,15 +55,25 @@ class ProductController extends Controller
         return view('product.edit', compact('product'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $input = Product::findOrFail($id);
+        $input->update($request->except(["_token"]));
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+
+        } else { unset($input['image']); }
+        return redirect()->route('products.index')->with('success', 'Success update product 😾👍');
     }
 
     public function destroy($id)
     {
         $product = Product::findOrfail($id);
         $product->delete();
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('Success', 'Success delete product 😾👍');
     }
 }

@@ -12,7 +12,8 @@ return new class extends Migration
             $table->id();
             $table->string('no_item');
             $table->string('kode_barang');
-            $table->string('gambar')->nullable();
+            $table->foreignId('id_kategori');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
