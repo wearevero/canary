@@ -2,7 +2,7 @@
     <img src="/public/banner.png" />
 </p>
 
-# Sample®️
+# Sample
 
 **_We Believe, Every Piece of Jewerly Tells a Radiant Story._**
 
@@ -94,4 +94,4 @@ If you discover a security vulnerability, please send an e-mail to me via [krido
 
 ## License
 
-Sample®️ is open-sourced software licensed under the [MIT License](./LICENSE).
+Sample is open-sourced software licensed under the [MIT License](./LICENSE).

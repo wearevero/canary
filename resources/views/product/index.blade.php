@@ -31,10 +31,10 @@
                           <tr>
                             <th scope="col" class="px-6 py-4">ID</th>
                             <th scope="col" class="px-6 py-4">No. Item</th>
-                            <th scope="col" class="px-6 py-4">Kode Barang</th>
-                            <th scope="col" class="px-6 py-4">Kategori</th>
-                            <th scope="col" class="px-6 py-4">Gambar</th>
-                            <th scope="col" class="px-6 py-4">Waktu input</th>
+                            <th scope="col" class="px-6 py-4">Barcode</th>
+                            <th scope="col" class="px-6 py-4">Category</th>
+                            <th scope="col" class="px-6 py-4">Picture</th>
+                            <th scope="col" class="px-6 py-4">Created at</th>
                             <th scope="col" class="px-6 py-4">Action</th>
                           </tr>
                         </thead>
@@ -44,11 +44,11 @@
                                     <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $no++ }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $product->no_item }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $product->kode_barang }}</td>
-                                    <td class="whitespace-nowrap px-6 py-4">{{ $product->id_kategori }}</td>
+                                    <td class="whitespace-nowrap px-6 py-4">{{ $product->category->nama_kategori }}</td>
                                     <td>
-                                        <img src="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}" alt="{{ $product->no_item }} tidak memiliki gambar" height="80" width="80" class="py-2 mx-auto rounded-md"/>
+                                        <img src="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}" alt="{{ $product->no_item }} tidak memiliki gambar" height="80" width="80" class="py-2 hover:cursor-pointer mx-auto rounded-md"/>
                                     </td>
-                                    <td class="whitespace-nowrap px-6 py-4">{{ $product->created_at }}</td>
+                                    <td class="whitespace-nowrap px-6 py-4">{{ $product->created_at->format('Y M d') }}</td>
                                     <td class="whitespace-nowrap px-6 m-auto flex align-middle justify-between py-12 items-center">
                                         <a href="{{ route('products.show', $product->id) }}">
                                             <x-feathericon-info class="text-sky-500 hover:text-sky-400" />

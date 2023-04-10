@@ -1,7 +1,7 @@
 {
-    "name": "wearevero/canary",
+    "name": "wearevero/sample",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Veronique open-source sample system",
     "keywords": [
         "framework",
         "laravel"

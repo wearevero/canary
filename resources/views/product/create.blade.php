@@ -1,4 +1,4 @@
-<x-app-layout title="Create products">
+<x-app-layout title="Add products">
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
@@ -7,7 +7,7 @@
                          + Add products
                     </h1>
 
-                    <form method="post" action="{{  route('products.store') }}" enctype="multipart/form-data" class="py-5 w-3/6 mx-auto items-center text-lg justify-center  text-center">
+                    <form method="post" action="{{  route('products.store') }}" enctype="multipart/form-data" class="py-5 w-3/6 mx-auto items-center text-lg justify-center text-center">
                         @csrf
                         <div class="flex justify-center">
                             <div class="relative mb-3">
@@ -37,6 +37,28 @@
                                 id="kodeBarang"
                                 name="kode_barang"
                                 placeholder="K0088b03-OV H" />
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center">
+                            <div class="relative mb-3">
+                                <label
+                                for="kodeBarang"
+                                class="">Category
+                                </label>
+                            <select
+                                class="border border-neutral-300 rounded-md"
+                                id="id_kategori"
+                                name="id_kategori">
+                                <option value="">
+                                    Pilih kategori 
+                                </option>
+                                @foreach ($categorys as $category)
+                                    <option value="{{ $category->id }}" {{ old('id_kategori') == $category->id ? 'selected' : null }}>
+                                        {{ $category->nama_kategori }}
+                                    </option>
+                                @endforeach
+                            </select>
                             </div>
                         </div>
 

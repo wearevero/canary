@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -8,17 +10,19 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
+        $category = Category::all();
         if ($request->keyword) {
             $products = Product::search($request->keyword)->get();
         } else {
             $products = Product::get();
         }
-        return view('product.index', compact('products'))->with('no', 1);
+        return view('product.index', compact('products', 'category'))->with('no', 1);
     }
 
     public function create()
     {
-        return view('product.create');
+        $categorys = Category::get();
+        return view('product.create', compact('categorys'));
     }
 
     public function store(Request $request)

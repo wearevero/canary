@@ -1,5 +1,5 @@
 {
-    "name": "@wearevero/canary",
+    "name": "@wearevero/sample",
     "license": "MIT",
     "private": true,
     "scripts": {

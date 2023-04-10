@@ -9,6 +9,7 @@ use Laravel\Scout\Searchable;
 class Product extends Model
 {
     use HasFactory, Searchable;
+    protected $table = 'products';
 
     protected $fillable = [
         'no_item',
@@ -28,6 +29,6 @@ class Product extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'id');
     }
 }
