@@ -12,11 +12,11 @@
                     <table class="min-w-full mt-5 text-lg text-center font-light">
                         <thead class="border-b font-medium dark:border-neutral-500">
                           <tr>
-                            <th scope="col" class="px-6 py-4">ID</th>
+                            <th scope="col" class="px-6 py-4">No</th>
                             <th scope="col" class="px-6 py-4">No. Item</th>
                             <th scope="col" class="px-6 py-4">Kode Barang</th>
                             <th scope="col" class="px-6 py-4">Gambar</th>
-                            <th scope="col" class="px-6 py-4">Created</th>
+                            <th scope="col" class="px-6 py-4">Created at</th>
                           </tr>
                         </thead>
                         <tbody>

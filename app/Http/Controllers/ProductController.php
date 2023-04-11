@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -12,9 +11,9 @@ class ProductController extends Controller
     {
         $category = Category::all();
         if ($request->keyword) {
-            $products = Product::search($request->keyword)->get();
+            $products = Product::search($request->keyword)->paginate(10);
         } else {
-            $products = Product::get();
+            $products = Product::paginate(10);
         }
         return view('product.index', compact('products', 'category'))->with('no', 1);
     }
@@ -43,7 +42,7 @@ class ProductController extends Controller
         }
 
         Product::create($input);
-        return redirect()->route('products.index')->with('success', 'Success ading product 😾👍');
+        return redirect()->route('products.index')->with('success', 'Success adding product 🥳');
     }
 
     public function show($id)

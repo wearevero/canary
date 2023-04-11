@@ -13,9 +13,13 @@
                         
                         {{-- alert testing --}}
                         @if ($message = Session::get('success'))
-                            <div class="">
-                                <p>{{ $message }}</p>
+                        <div>
+                            <div class="max-w-xs bg-blue-100 border border-blue-200 text-sm text-blue-500 rounded-md shadow-md" role="alert">
+                              <div class="flex py-2 px-4">
+                                {{ $message }}
+                              </div>
                             </div>
+                          </div>
                         @endif
                         {{-- end --}}
 
@@ -68,7 +72,10 @@
                             @endforeach
                         </tbody>
                       </table>
-                      <x-render-time />
+                      <div class="mt-5 justify-between">
+                        {{ $products->links() }}
+                        <x-render-time />
+                    </div>
                 </div>
             </div>
         </div>
