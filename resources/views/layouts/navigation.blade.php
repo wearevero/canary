@@ -12,13 +12,13 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         <x-feathericon-home class="pl-1" /> &nbsp; {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('products.index')" :active="request()->routeIs('products.index')">
+                    <x-nav-link :href="route('products.index')" :active="request()->routeIs('products.*')">
                         <x-feathericon-archive class="pl-1" /> &nbsp; {{ __('Products') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('catalogue.index')" :active="request()->routeIs('catalogue.index')">
+                    <x-nav-link :href="route('catalogue.index')" :active="request()->routeIs('catalogue.*')">
                         <x-feathericon-grid class="pl-1" /> &nbsp; {{ __('Catalogue') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
                         <x-feathericon-user class="pl-1" /> &nbsp; {{ __('Users') }}
                     </x-nav-link>
                     <x-nav-link href="/health" target="_blank" :active="request()->routeIs('/health')">

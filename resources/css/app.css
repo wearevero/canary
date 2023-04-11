@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-select option {
-    text-transform: uppercase !important;
+:root {
+    font-smooth: always;
 }

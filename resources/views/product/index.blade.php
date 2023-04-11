@@ -3,8 +3,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <h1 class="text-center flex space-x-4 items-center justify-center text-5xl font-bold py-5">
-                        💎 Products
+                    <h1 class="text-center flex space-x-4 items-center justify-center text-6xl font-extrabold py-5">
+                        + Products
                     </h1>
                     <div class="my-6 flex space-x-5 align-middle justify-between items-center">
                         <a href="{{ route('products.create') }}" class="px-3 py-2 hover:bg-green-300/10 border rounded-lg bg-green-500/10 text-green-500 border-green-800">
@@ -31,20 +31,19 @@
                         </form>
                     </div>
                     <table class="min-w-full mt-5 text-lg text-center font-light">
-                        <thead class="border-b font-medium dark:border-neutral-500">
+                        <thead class="border-b font-bold dark:border-neutral-500">
                           <tr>
                             <th scope="col" class="px-6 py-4">ID</th>
                             <th scope="col" class="px-6 py-4">No. Item</th>
                             <th scope="col" class="px-6 py-4">Barcode</th>
                             <th scope="col" class="px-6 py-4">Category</th>
                             <th scope="col" class="px-6 py-4">Picture</th>
-                            <th scope="col" class="px-6 py-4">Created at</th>
                             <th scope="col" class="px-6 py-4">Action</th>
                           </tr>
                         </thead>
                         <tbody class="">
                             @foreach($products as $product)
-                                <tr class="border-b dark:border-neutral-500">
+                                <tr class="border-b font-semibold dark:border-neutral-500">
                                     <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $no++ }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $product->no_item }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $product->kode_barang }}</td>
@@ -52,7 +51,6 @@
                                     <td>
                                         <img src="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}" alt="{{ $product->no_item }} tidak memiliki gambar" height="80" width="80" class="py-2 hover:cursor-pointer mx-auto rounded-md"/>
                                     </td>
-                                    <td class="whitespace-nowrap px-6 py-4">{{ $product->created_at->format('Y M d') }}</td>
                                     <td class="whitespace-nowrap px-6 m-auto flex align-middle justify-between py-12 items-center">
                                         <a href="{{ route('products.show', $product->id) }}">
                                             <x-feathericon-info class="text-sky-500 hover:text-sky-400" />
