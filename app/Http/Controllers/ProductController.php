@@ -9,18 +9,18 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        $category = Category::all();
+        $category = Category::select('nama_kategori')->get();
         if ($request->keyword) {
             $products = Product::search($request->keyword)->paginate(10);
         } else {
-            $products = Product::paginate(10);
+            $products = Product::with('category')->paginate(10);
         }
         return view('product.index', compact('products', 'category'))->with('no', 1);
     }
 
     public function create()
     {
-        $categorys = Category::get();
+        $categorys = Category::select('id', 'nama_kategori')->get();
         return view('product.create', compact('categorys'));
     }
 

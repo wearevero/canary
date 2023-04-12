@@ -3,6 +3,7 @@
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
@@ -20,7 +21,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // Route group user
-Route::controller(ProfileController::class)
+Route::controller(UserController::class)
     ->prefix('users')
     ->middleware('auth')
     ->group(function () {

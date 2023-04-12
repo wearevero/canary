@@ -20,7 +20,7 @@
                             <th scope="col" class="px-6 py-4">ID</th>
                             <th scope="col" class="px-6 py-4">Name</th>
                             <th scope="col" class="px-6 py-4">Email</th>
-                            <th scope="col" class="px-6 py-4">Created</th>
+                            <th scope="col" class="px-6 py-4">Verified</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -29,7 +29,13 @@
                                     <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $user->id }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $user->name }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $user->email }}</td>
-                                    <td class="whitespace-nowrap px-6 py-4">{{ $user->created_at }}</td>
+                                    <td class="whitespace-nowrap px-6 py-4">
+                                        @if($user->email_verified != null) ? 
+                                            {{ $user->email_verified }}
+                                        @else 
+                                            Not verification 
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

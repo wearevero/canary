@@ -6,7 +6,7 @@
             <table>
                 <thead class="text-5xl font-extrabold">
                     <tr>
-                        <th class="pb-5">
+                        <th class="pb-5 py-7">
                             Category
                         <th>
                     </tr>
