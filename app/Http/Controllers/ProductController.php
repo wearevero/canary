@@ -28,9 +28,11 @@ class ProductController extends Controller
     {
         $request->validate([
             'no_item' => 'required',
-            'kode_barang' => 'required',
             'id_kategori' => 'required',
-            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'size' => 'nullable',
+            'size_stone' => 'nullable',
+            'qty_stone' => 'nullable'
         ]);
 
         $input = $request->all();

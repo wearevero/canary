@@ -13,10 +13,10 @@ class CatalogueController extends Controller
         return view('catalogue.index', compact('categorys'))->with('no', 1);
     }
 
-    public function testing()
+    public function show_category(string $id)
     {
-        $categorys = Category::get();
-        return view('catalogue.testing', compact('categorys'))->with('no', 1);
+        
+        return view('catalogue.slug', compact('categorys'));
     }
 
     public function create()

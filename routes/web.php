@@ -34,6 +34,7 @@ Route::controller(CatalogueController::class)
     ->middleware('auth')
     ->group(function () {
         Route::get('/', 'index')->name('catalogue.index');
+        Route::get('/category/{id}', 'show_category')->name('catalogue.category');
     });
 
 // Product group route
