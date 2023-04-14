@@ -33,7 +33,6 @@
                           <tr>
                             <th scope="col" class="px-6 py-4">ID</th>
                             <th scope="col" class="px-6 py-4">No. Item</th>
-                            <th scope="col" class="px-6 py-4">Barcode</th>
                             <th scope="col" class="px-6 py-4">Category</th>
                             <th scope="col" class="px-6 py-4">Picture</th>
                             <th scope="col" class="px-6 py-4">Action</th>
@@ -44,7 +43,6 @@
                                 <tr class="border-b font-semibold dark:border-neutral-500">
                                     <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $no++ }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $product->no_item }}</td>
-                                    <td class="whitespace-nowrap px-6 py-4">{{ $product->kode_barang }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $product->category->nama_kategori }}</td>
                                     <td>
                                         <img src="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}" alt="{{ $product->no_item }} tidak memiliki gambar" height="80" width="80" class="py-2 hover:cursor-pointer mx-auto rounded-md"/>
