@@ -10,6 +10,7 @@ class CatalogueController extends Controller
     public function index()
     {
         $categorys = Category::get();
+
         return view('catalogue.index', compact('categorys'))->with('no', 1);
     }
 

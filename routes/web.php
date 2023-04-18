@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CatalogueController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -29,7 +30,7 @@ Route::controller(UserController::class)
     });
 
 // Catalogue group route
-Route::controller(CatalogueController::class)
+Route::controller(CategoryController::class)
     ->prefix('catalogue')
     ->middleware('auth')
     ->group(function () {
@@ -50,6 +51,5 @@ Route::controller(ProductController::class)
         Route::put('/updates/{id}', 'update')->name('products.update');
         Route::delete('/delete/{id}', 'destroy')->name('products.delete');
     });
-
 
 require __DIR__.'/auth.php';

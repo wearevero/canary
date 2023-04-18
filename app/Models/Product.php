@@ -9,19 +9,22 @@ use Laravel\Scout\Searchable;
 class Product extends Model
 {
     use HasFactory, Searchable;
+
     protected $table = 'products';
 
     protected $fillable = [
         'no_item',
         'id_kategori',
         'image',
+        'size',
+        'size_stone',
+        'qty_stone'
     ];
-    
+
     public function toSearchableArray(): array
     {
         return [
             'no_item' => $this->no_item,
-            'kode_barang' => $this->kode_barang,
             'id_kategori' => $this->id_kategori,
         ];
     }

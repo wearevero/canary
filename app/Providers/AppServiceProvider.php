@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
             EnvironmentCheck::new()->expectEnvironment('local'),
             FlareErrorOccurrenceCountCheck::new()->warnWhenMoreErrorsReceivedThan(20),
             UsedDiskSpaceCheck::new(),
-            PingCheck::new()->url('localhost:8000')->timeout(3)->name('Development Environment')
+            PingCheck::new()->url('localhost:8000')->timeout(3)->name('Development Environment'),
         ]);
     }
 

@@ -21,7 +21,7 @@
                     <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
                         <x-feathericon-user class="pl-1" /> &nbsp; {{ __('Users') }}
                     </x-nav-link>
-                    <x-nav-link href="/health" target="_blank" :active="request()->routeIs('/health')">
+                    <x-nav-link href="/health" target="blank" :active="request()->routeIs('/health')">
                         <x-feathericon-heart class="pl-1" /> &nbsp; {{ __('Health') }}
                     </x-nav-link>
                 </div>

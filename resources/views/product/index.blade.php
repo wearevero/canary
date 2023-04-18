@@ -47,17 +47,17 @@
                                     <td>
                                         <img src="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}" alt="{{ $product->no_item }} tidak memiliki gambar" height="80" width="80" class="py-2 hover:cursor-pointer mx-auto rounded-md"/>
                                     </td>
-                                    <td class="whitespace-nowrap px-6 m-auto flex align-middle justify-between py-12 items-center">
-                                        <a href="{{ route('products.show', $product->id) }}">
+                                    <td class="whitespace-nowrap flex align-middle justify-center space-x-5 py-12 items-center">
+                                        <a href="{{ route('products.show', $product->id) }}" title="Detail" class="bg-sky-500/20 border border-sky-500 rounded-lg py-2 px-3">
                                             <x-feathericon-info class="text-sky-500 hover:text-sky-400" />
                                         </a>
-                                        <a href="{{ route('products.edit', $product->id) }}">
+                                        <a href="{{ route('products.edit', $product->id) }}" title="Edit" class="bg-green-500/20 border border-green-500 rounded-lg py-2 px-3">
                                             <x-feathericon-edit class="text-green-500 hover:text-green-400" />
                                         </a>
                                         <form action="{{ route('products.delete', $product->id) }}" class="flex" method="post">
                                             @method('delete')
                                             @csrf
-                                            <button type="submit">
+                                            <button type="submit" title="Delete" class="bg-rose-500/20 border border-rose-500 rounded-lg py-2 px-3">
                                                 <x-feathericon-trash class="text-rose-500 hover:text-rose-400" />
                                             </button>
                                         </form>
