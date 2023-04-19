@@ -17,7 +17,7 @@
                         <td class="px-2 rounded-lg">
                             <h3 class="text-xl py-1 uppercase">
                                 {{ $no++ }}.
-                                <a class="border-b-2 hover:border-sky-900 hover:text-sky-900 border-dotted border-gray-700" href="{{ route('catalogue.index') }}/category/{{ $category->id }}">
+                                <a class="border-b-2 hover:border-sky-900 hover:text-sky-900 border-dotted border-gray-700" href="{{ route('products.details') }}/{{ $product->id }}">
                                     {{ $category->nama_kategori }}
                                 </a>
                             </h3>

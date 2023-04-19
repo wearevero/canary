@@ -6,7 +6,7 @@
                     <h1 class="text-center flex items-center justify-center text-5xl font-bold py-5">
                         Edit {{ $product->no_item }}
                     </h1>  
-                                        <form method="POST" action="{{  route('products.update', $product->id) }}" enctype="multipart/form-data" class="py-5 text-lg items-center justify-center">
+                                        <form method="post" action="{{  route('products.update', $product->id) }}" enctype="multipart/form-data" class="py-5 text-lg items-center justify-center">
                                             @csrf
                                             @method('PUT')
                                             <img src="/image/{{ $product->image }}" class="h-auto shadow-md text-center mx-auto mb-5 max-w-full rounded-lg" alt="Belum ada gambar." />

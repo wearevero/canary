@@ -42,7 +42,7 @@ class ProductController extends Controller
         $input = $request->all();
         if ($image = $request->file('image')) {
             $destinationPath = 'image/';
-            $profileImage = date('YmdHis').'.'.$image->getClientOriginalExtension();
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
         }
@@ -69,26 +69,35 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
-        $input = Product::findOrFail($id);
-        
-        $request->validate([
-            'no_item' => 'required',
-            'id_kategori' => 'required',
-            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-            'size' => 'nullable',
-            'size_stone' => 'nullable',
-            'qty_stone' => 'nullable',
-        ]);
-
-
-        if ($image = $request->file('image')) {
-            $destinationPath = 'image/';
-            $profileImage = date('YmdHis').'.'.$image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
+        if ($files = $request->file('image')) {
+            $destinationPath = 'image/'; // upload path
+            $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
+            $files->move($destinationPath, $profileImage);
+            $update['image'] = "$profileImage";
         }
+        
+        Product::where('id',$id)->update($update);
 
-        $input = Product::where('id', $id)->update($request->except(['_token', '_method']));
+        // $input = Product::findOrFail($id);
+        
+        // $request->validate([
+        //     'no_item' => 'required',
+        //     'id_kategori' => 'required',
+        //     'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        //     'size' => 'nullable',
+        //     'size_stone' => 'nullable',
+        //     'qty_stone' => 'nullable',
+        // ]);
+
+
+        // if ($image = $request->file('image')) {
+        //     $destinationPath = 'image/';
+        //     $profileImage = date('YmdHis').'.'.$image->getClientOriginalExtension();
+        //     $image->move($destinationPath, $profileImage);
+        //     $input['image'] = "$profileImage";
+        // }
+
+        // $input = Product::where('id', $id)->update($request->except(['_token', '_method']));
         // if ($image = $request->file('image')) {
         //     $destinationPath = 'image/';
         //     $profileImage = date('YmdHis').'.'.$image->getClientOriginalExtension();
