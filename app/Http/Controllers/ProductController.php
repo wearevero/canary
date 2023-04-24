@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ProductsExport;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        $category = Category::select('nama_kategori')->get();
+        $category = Category::get();
         if ($request->keyword) {
             $products = Product::search($request->keyword)->paginate(10);
         } else {
@@ -24,7 +26,6 @@ class ProductController extends Controller
     public function create()
     {
         $categorys = Category::select('id', 'nama_kategori')->get();
-
         return view('product.create', compact('categorys'));
     }
 
@@ -70,40 +71,13 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         if ($files = $request->file('image')) {
-            $destinationPath = 'image/'; // upload path
+            $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
             $files->move($destinationPath, $profileImage);
             $update['image'] = "$profileImage";
         }
-        
         Product::where('id',$id)->update($update);
 
-        // $input = Product::findOrFail($id);
-        
-        // $request->validate([
-        //     'no_item' => 'required',
-        //     'id_kategori' => 'required',
-        //     'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-        //     'size' => 'nullable',
-        //     'size_stone' => 'nullable',
-        //     'qty_stone' => 'nullable',
-        // ]);
-
-
-        // if ($image = $request->file('image')) {
-        //     $destinationPath = 'image/';
-        //     $profileImage = date('YmdHis').'.'.$image->getClientOriginalExtension();
-        //     $image->move($destinationPath, $profileImage);
-        //     $input['image'] = "$profileImage";
-        // }
-
-        // $input = Product::where('id', $id)->update($request->except(['_token', '_method']));
-        // if ($image = $request->file('image')) {
-        //     $destinationPath = 'image/';
-        //     $profileImage = date('YmdHis').'.'.$image->getClientOriginalExtension();
-        //     $image->move($destinationPath, $profileImage);
-        //     $input['image'] = "$profileImage";
-        // }
         return redirect()->route('products.index')->with('success', 'Success update product 😾👍');
     }
 
@@ -113,5 +87,10 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect()->route('products.index')->with('Success', 'Success delete product 😾👍');
+    }
+
+    public function export()
+    {
+        return new ProductsExport;
     }
 }

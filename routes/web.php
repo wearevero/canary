@@ -50,6 +50,7 @@ Route::controller(ProductController::class)
         Route::get('/edit/{id}', 'edit')->name('products.edit');
         Route::put('/updates/{id}', 'update')->name('products.update');
         Route::delete('/delete/{id}', 'destroy')->name('products.delete');
+        Route::get('export', 'export')->name('products.export');
     });
 
 require __DIR__.'/auth.php';
