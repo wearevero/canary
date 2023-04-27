@@ -16,7 +16,7 @@ class CategoryController extends Controller
 
     public function show_category($id)
     {
-        $products = Product::where('id', $id)->get();
+        $products = Product::where('id_kategori', $id)->get();
         $categorys = Category::select('id', 'nama_kategori')->get();
         return view('catalogue.slug', compact('products', 'categorys'))->with('no', 1);
     }

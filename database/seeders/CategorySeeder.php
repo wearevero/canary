@@ -12,7 +12,7 @@ class CategorySeeder extends Seeder
     {
         DB::table('categorys')->insert([
             [
-                'nama_kategori' => 'Earstud',
+                'nama_kategori' => 'Ear Stud',
                 'created_at' => Carbon::now()->format('Y-m-d h:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d h:i:s'),
             ],
