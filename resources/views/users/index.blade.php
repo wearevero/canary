@@ -17,7 +17,7 @@
                       <table class="min-w-full text-lg text-center font-light">
                         <thead class="border-b font-medium dark:border-neutral-500">
                           <tr>
-                            <th scope="col" class="px-6 py-4">ID</th>
+                            <th scope="col" class="px-6 py-4">No</th>
                             <th scope="col" class="px-6 py-4">Name</th>
                             <th scope="col" class="px-6 py-4">Email</th>
                             <th scope="col" class="px-6 py-4">Verified</th>
@@ -26,7 +26,7 @@
                         <tbody>
                             @foreach($users as $user)
                                 <tr class="border-b dark:border-neutral-500">
-                                    <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $user->id }}</td>
+                                    <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $no++ }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $user->name }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $user->email }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">

@@ -3,24 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Exports\ProductsExport;
+use App\Imports\ProductsImport;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        $category = Category::get();
         if ($request->keyword) {
             $products = Product::search($request->keyword)->paginate(10);
         } else {
-            $products = Product::with('category')->paginate(10);
+            $products = Product::with('category')->select('id', 'no_item', 'image', 'id_kategori')->paginate(10);
         }
 
-        return view('product.index', compact('products', 'category'))->with('no', 1);
+        return view('product.index', compact('products'))->with('no', 1);
     }
 
     public function create()
@@ -86,11 +84,23 @@ class ProductController extends Controller
         $product = Product::findOrfail($id);
         $product->delete();
 
-        return redirect()->route('products.index')->with('Success', 'Success delete product 😾👍');
+        return redirect()->route('products.index')->with('success', 'Success delete product 😾👍');
     }
 
     public function export()
     {
         return new ProductsExport;
+    }
+
+    public function importstore(Request $request)
+    {
+        $file = $request->file('file'); 
+        (new ProductsImport)->import($file);
+        return back()->with('success', 'Berhasil import data product 😾👍');
+    }
+
+    public function import()
+    {
+        return view('product.import');
     }
 }

@@ -36,8 +36,8 @@
             </div>
             @foreach($products as $product)
                 <div class="border-2 grayscale hover:grayscale-0 hover:border-indigo-500 transform transition duration-500 hover:scale-110 hover:shadow-lg border-gray-600 float-right text-center content-center items-center justify-center hover:cursor-pointer mx-auto p-3 my-3 rounded-lg">
-                    <img width="200" class="object-cover rounded-lg" src="https://raw.githubusercontent.com/yuxxeun/yuxxeun/master/assets/bsmnt.jpeg" />
-                    <h3 class="my-5 text-xl uppercase font-extrabold">
+                    <img width="200" class="object-cover border-2 hover:border-indigo-500 border-gray-800 text-center justify-center rounded-lg" src="{{ asset('image/'.$product->image) }}" alt="Tidak ada gambar" />
+                    <h3 class="my-5 text-lg uppercase font-extrabold">
                         {{ $product->no_item }}
                     </h3>
                     <a href="{{ route('products.show', $product->id) }}">

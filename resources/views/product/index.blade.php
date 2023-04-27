@@ -5,10 +5,19 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h1 class="text-7xl text-center mt-10 mb-20 font-extrabold">List All Products 🧸</h1>
                     <div class="my-6 flex space-x-5 align-middle justify-between items-center">
-                        <a href="{{ route('products.create') }}" class="px-3 py-2 hover:bg-green-300/10 border rounded-lg bg-green-500/10 text-green-500 border-green-800">
-                            Add product +
-                        </a>
-                        
+                        <div class="space-x-5">
+                            <a href="{{ route('products.create') }}" class="px-3 py-2 hover:bg-green-300/10 border rounded-lg bg-green-500/10 text-green-500 border-green-800">
+                                Add product +
+                            </a>
+
+                            <a href="{{ route('products.export') }}" class="px-3 py-2 hover:bg-yellow-300/10 border rounded-lg bg-yellow-500/10 text-yellow-500 border-yellow-800">
+                                Export
+                            </a>
+
+                            <a href="{{ route('products.import') }}" class="px-3 py-2 hover:bg-indigo-300/10 border rounded-lg bg-indigo-500/10 text-indigo-500 border-indigo-800">
+                                Import
+                            </a>
+                        </div>
                         {{-- alert testing --}}
                         @if ($message = Session::get('success'))
                         <div>
@@ -22,7 +31,7 @@
                         {{-- end --}}
 
                         <form method="get">
-                            <input type="text" name="keyword" class="px-3 py-2 border rounded-lg border-slate-500" placeholder="VR12345" />
+                            <input type="text" name="keyword" class="px-3 py-2 border rounded-lg border-slate-500" placeholder="Cari no. item" />
                             <button type="submit" class="bg-sky-800/10 border border-sky-800 text-sky-500 py-2 px-3 rounded-lg hover:bg-sky-300/20">
                                 Search
                             </button>

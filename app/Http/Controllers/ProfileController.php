@@ -17,10 +17,10 @@ class ProfileController extends Controller
         if ($request->keyword) {
             $users = User::search($request->keyword)->get();
         } else {
-            $users = User::all();
+            $users = User::select('name', 'email')->get();
         }
 
-        return view('users.index', compact('users'));
+        return view('users.index', compact('users'))->with('no', 1);
     }
 
     public function edit(Request $request): View
