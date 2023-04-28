@@ -17,9 +17,11 @@
                         <td class="px-2 rounded-lg">
                             <h3 class="text-xl py-1 uppercase">
                                 {{ $no++ }}.
-                                <a class="border-b-2 hover:border-sky-900 active:text-rose-500 
-                                    hover:text-sky-900 border-dotted border-gray-700" 
-                                    {{ Request::is('catalogue.category', $category->id) ? 'class=active' : '' }} href="{{ route('catalogue.category', $category->id) }}">
+                                <a href="{{ route('catalogue.category', $category->id) }}"
+                                    @if (url()->current() == route('catalogue.category', $category->id))
+                                        @class(['active', 'text-rose-500 border-b-2 hover:border-sky-900 hover:text-black border-dotted border-gray-700' => true])
+                                    @endif 
+                                    class="border-b-2 hover:border-sky-900 hover:text-sky-900 border-dotted border-gray-700">
                                         {{ $category->nama_kategori }}
                                 </a>
                             </h3>
