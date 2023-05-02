@@ -20,7 +20,7 @@
                             <th scope="col" class="px-6 py-4">No</th>
                             <th scope="col" class="px-6 py-4">Name</th>
                             <th scope="col" class="px-6 py-4">Email</th>
-                            <th scope="col" class="px-6 py-4">Verified</th>
+                            <th scope="col" class="px-6 py-4">Verified at</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -30,10 +30,10 @@
                                     <td class="whitespace-nowrap px-6 py-4">{{ $user->name }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $user->email }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">
-                                        @if($user->email_verified != null) ? 
-                                            {{ $user->email_verified }}
+                                        @if($user->email_verified_at != null) 
+                                            {{ $user->email_verified_at }}
                                         @else 
-                                            Not verification 
+                                            Not verified
                                         @endif
                                     </td>
                                 </tr>

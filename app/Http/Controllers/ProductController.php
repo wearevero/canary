@@ -24,6 +24,7 @@ class ProductController extends Controller
     public function create()
     {
         $categorys = Category::select('id', 'nama_kategori')->get();
+
         return view('product.create', compact('categorys'));
     }
 
@@ -41,7 +42,7 @@ class ProductController extends Controller
         $input = $request->all();
         if ($image = $request->file('image')) {
             $destinationPath = 'image/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $profileImage = date('YmdHis').'.'.$image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
         }
@@ -70,11 +71,11 @@ class ProductController extends Controller
     {
         if ($files = $request->file('image')) {
             $destinationPath = 'image/';
-            $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
+            $profileImage = date('YmdHis').'.'.$files->getClientOriginalExtension();
             $files->move($destinationPath, $profileImage);
             $update['image'] = "$profileImage";
         }
-        Product::where('id',$id)->update($update);
+        Product::where('id', $id)->update($update);
 
         return redirect()->route('products.index')->with('success', 'Success update product 😾👍');
     }
@@ -94,8 +95,9 @@ class ProductController extends Controller
 
     public function importstore(Request $request)
     {
-        $file = $request->file('file'); 
+        $file = $request->file('file');
         (new ProductsImport)->import($file);
+
         return back()->with('success', 'Berhasil import data product 😾👍');
     }
 

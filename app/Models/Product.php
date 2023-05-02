@@ -18,7 +18,7 @@ class Product extends Model
         'image',
         'size',
         'size_stone',
-        'qty_stone'
+        'qty_stone',
     ];
 
     public function toSearchableArray(): array

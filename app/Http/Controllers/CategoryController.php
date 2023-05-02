@@ -11,6 +11,7 @@ class CategoryController extends Controller
     {
         $categorys = Category::select('id', 'nama_kategori')->get();
         $products = Product::get();
+
         return view('catalogue.index', compact('products', 'categorys'))->with('no', 1);
     }
 
@@ -18,6 +19,7 @@ class CategoryController extends Controller
     {
         $products = Product::where('id_kategori', $id)->get();
         $categorys = Category::select('id', 'nama_kategori')->get();
+
         return view('catalogue.slug', compact('products', 'categorys'))->with('no', 1);
     }
 }

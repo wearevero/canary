@@ -31,7 +31,7 @@
                         {{-- end --}}
 
                         <form method="get">
-                            <input type="text" name="keyword" class="px-3 py-2 border rounded-lg border-slate-500" placeholder="Cari no. item" />
+                            <input type="text" name="keyword" class="px-3 py-2 border rounded-lg border-slate-500" placeholder="Cari no. item" placeholder="{{ old('keyword') }}" />
                             <button type="submit" class="bg-sky-800/10 border border-sky-800 text-sky-500 py-2 px-3 rounded-lg hover:bg-sky-300/20">
                                 Search
                             </button>
