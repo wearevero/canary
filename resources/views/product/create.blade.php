@@ -6,6 +6,15 @@
                     <h1 class="text-center flex items-center justify-center font-bold text-7xl mt-5 mb-10">
                          Add Products ✨
                     </h1>
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{$message}}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <img class="mb-3" src="image/{{ Session::get('image') }}" style="width: 250px;">
+                    @endif
 
 
                     {{-- testing input group --}}

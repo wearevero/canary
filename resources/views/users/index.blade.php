@@ -3,8 +3,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <h1 class="text-center flex items-center justify-center text-5xl font-bold py-5">
-                        👤 User
+                    <h1 class="text-center flex items-center justify-center text-7xl font-bold py-5">
+                        List All Users 🤖
                     </h1>
                     <div>
                         <form method="get" class="justify-end my-5 text-right">
@@ -31,9 +31,13 @@
                                     <td class="whitespace-nowrap px-6 py-4">{{ $user->email }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">
                                         @if($user->email_verified_at != null) 
-                                            {{ $user->email_verified_at }}
+                                            <p class="bg-sky-800/20 py-1 rounded-md text-sky-600">
+                                                Verified: {{ $user->email_verified_at }}
+                                            </p>
                                         @else 
-                                            Not verified
+                                            <p class="bg-rose-800/20 py-1 rounded-md text-rose-600">
+                                                This user maybe ilegal
+                                            </p>
                                         @endif
                                     </td>
                                 </tr>

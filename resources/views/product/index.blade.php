@@ -3,7 +3,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <h1 class="text-7xl text-center mt-10 mb-20 font-extrabold">List All Products 🧸</h1>
+                    <h1 class="text-7xl text-center mt-10 mb-20 font-extrabold">List All Products 💠</h1>
                     <div class="my-6 flex space-x-5 align-middle justify-between items-center">
                         <div class="space-x-5">
                             <a href="{{ route('products.create') }}" class="px-3 py-2 hover:bg-green-300/10 border rounded-lg bg-green-500/10 text-green-500 border-green-800">

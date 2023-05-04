@@ -10,7 +10,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categorys = Category::select('id', 'nama_kategori')->get();
-        $products = Product::get();
+        $products = Product::latest()->take(9)->get();
 
         return view('catalogue.index', compact('products', 'categorys'))->with('no', 1);
     }

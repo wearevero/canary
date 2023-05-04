@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductEximController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -11,7 +12,7 @@ Route::get('health', HealthCheckResultsController::class)->name('health');
 Route::view('/', 'auth.login');
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 // Profie group route
 Route::middleware('auth')->group(function () {
@@ -40,7 +41,7 @@ Route::controller(CategoryController::class)
 // Product group route
 Route::controller(ProductController::class)
     ->prefix('products')
-    ->middleware('auth')
+    ->middleware(['auth', 'verified'])
     ->group(function () {
         Route::get('/', 'index')->name('products.index');
         Route::get('/create', 'create')->name('products.create');
@@ -53,5 +54,10 @@ Route::controller(ProductController::class)
         Route::post('/', 'importstore')->name('products.importstore');
         Route::get('export', 'export')->name('products.export');
     });
+
+// Exim (export & import) controller
+Route::get('importproduct', [ProductEximController::class, 'import'])->name('exim.import');
+Route::get('exportproduct', [ProductEximController::class, 'export'])->name('exim.export');
+Route::post('product', [ProductEximController::class, 'importstore'])->name('exim.store');
 
 require __DIR__.'/auth.php';
