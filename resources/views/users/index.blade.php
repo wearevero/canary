@@ -24,13 +24,13 @@
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach($users as $user)
+                            @foreach ($users as $user)
                                 <tr class="border-b dark:border-neutral-500">
                                     <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $no++ }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $user->name }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $user->email }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">
-                                        @if($user->email_verified_at != null) 
+                                        @if ($user->email_verified_at != null) 
                                             <p class="bg-sky-800/20 py-1 rounded-md text-sky-600">
                                                 Verified: {{ $user->email_verified_at }}
                                             </p>
