@@ -2,17 +2,17 @@
     <img src="/public/banner.png" />
 </p>
 
-# Sample
+# Catalogue
 
 **_We Believe, Every Piece of Jewerly Tells a Radiant Story._**
 
-Veronique open-source sample system. 
+Veronique open-source catalogue system. 
 Using HMVC-ready architecture by default. 
 
 
 ## Motivation
 
-To manage sample-related stuff.
+To manage products-related stuff.
 
 ## Pre-requisite
 
@@ -33,9 +33,9 @@ To be able to run this project, several supporting tools are needed, such as:
 
 ## Run development mode
 
-1. Clone this project: `git clone https://github.com/wearevero/sample.git`
+1. Clone this project: `git clone https://github.com/wearevero/catalogue.git`
 
-2. Open **double** `bash` in the `sample` directory: one to run node js the other to run composer engine.
+2. Open **double** `bash` in the `catalogue` directory: one to run node js the other to run composer engine.
 
 3. Install all required php dependencies with the command `composer install` and... wait for the apocalypse, just kidding.
 
@@ -94,4 +94,4 @@ If you discover a security vulnerability, please send an e-mail to me via [krido
 
 ## License
 
-Sample is open-sourced software licensed under the [AGPL v3](./LICENSE).
+Catalogue is open-sourced software licensed under the [AGPL v3](./LICENSE).
