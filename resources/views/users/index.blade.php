@@ -4,7 +4,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h1 class="text-center flex items-center justify-center text-7xl font-bold py-5">
-                        List All Users 🤖
+                        List All Users.
                     </h1>
                     <div>
                         <form method="get" class="justify-end my-5 text-right">
@@ -36,7 +36,7 @@
                                             </p>
                                         @else 
                                             <p class="bg-rose-800/20 py-1 rounded-md text-rose-600">
-                                                This user maybe ilegal
+                                                Not Verified
                                             </p>
                                         @endif
                                     </td>

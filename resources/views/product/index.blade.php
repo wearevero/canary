@@ -3,7 +3,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <h1 class="text-7xl text-center mt-10 mb-20 font-extrabold">List All Products 💠</h1>
+                    <h1 class="text-7xl text-center mt-10 mb-20 font-extrabold">List All Products.</h1>
                     <div class="my-6 flex space-x-5 align-middle justify-between items-center">
                         <div class="space-x-5">
                             <a href="{{ route('products.create') }}" class="px-3 py-2 hover:bg-green-300/10 border rounded-lg bg-green-500/10 text-green-500 border-green-800">
@@ -64,16 +64,18 @@
                                         <a href="{{ route('products.show', $product->id) }}" title="Detail" class="bg-sky-500/20 border border-sky-500 rounded-lg py-2 px-3">
                                             <x-feathericon-info class="text-sky-500 hover:text-sky-400" />
                                         </a>
-                                        <a href="{{ route('products.edit', $product->id) }}" title="Edit" class="bg-green-500/20 border border-green-500 rounded-lg py-2 px-3">
-                                            <x-feathericon-edit class="text-green-500 hover:text-green-400" />
-                                        </a>
-                                        <form action="{{ route('products.delete', $product->id) }}" class="flex" method="post">
-                                            @method('delete')
-                                            @csrf
-                                            <button type="submit" title="Delete" class="bg-rose-500/20 border border-rose-500 rounded-lg py-2 px-3">
-                                                <x-feathericon-trash class="text-rose-500 hover:text-rose-400" />
-                                            </button>
-                                        </form>
+                                        @if ( auth()->user()->id == 1 )
+                                            <a href="{{ route('products.edit', $product->id) }}" title="Edit" class="bg-green-500/20 border border-green-500 rounded-lg py-2 px-3">
+                                                <x-feathericon-edit class="text-green-500 hover:text-green-400" />
+                                            </a>
+                                            <form action="{{ route('products.delete', $product->id) }}" class="flex" method="post">
+                                                @method('delete')
+                                                @csrf
+                                                <button type="submit" title="Delete" class="bg-rose-500/20 border border-rose-500 rounded-lg py-2 px-3">
+                                                    <x-feathericon-trash class="text-rose-500 hover:text-rose-400" />
+                                                </button>
+                                            </form>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

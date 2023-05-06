@@ -41,7 +41,7 @@ Route::controller(CategoryController::class)
 // Product group route
 Route::controller(ProductController::class)
     ->prefix('products')
-    ->middleware(['auth', 'verified'])
+    ->middleware(['auth'])
     ->group(function () {
         Route::get('/', 'index')->name('products.index');
         Route::get('/create', 'create')->name('products.create');
