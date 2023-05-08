@@ -10,10 +10,10 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-
     public function __construct()
     {
-        $this->middleware(['auth', 'verified']);
+        $this->middleware(['auth']);
+
         return view('product.index');
     }
 
@@ -53,10 +53,9 @@ class ProductController extends Controller
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
         }
-
         Product::create($input);
 
-        return redirect()->route('products.index')->with('success', 'Success adding product 🥳');
+        return redirect()->route('products.index')->with('create', 'Berhasil menambah item 🥳');
     }
 
     public function show($id)
@@ -76,6 +75,18 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'no_item' => 'required',
+            'id_kategori' => 'required',
+            'size' => 'nullable',
+            'size_stone' => 'nullable',
+            'qty_stone' => 'nullable',
+        ]);
+        $update['no_item'] = $request->get('no_item');
+        $update['id_kategori'] = $request->get('id_kategori');
+        $update['size'] = $request->get('size');
+        $update['size_stone'] = $request->get('size_stone');
+        $update['qty_stone'] = $request->get('qty_stone');
         if ($files = $request->file('image')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis').'.'.$files->getClientOriginalExtension();
@@ -84,7 +95,7 @@ class ProductController extends Controller
         }
         Product::where('id', $id)->update($update);
 
-        return redirect()->route('products.index')->with('success', 'Success update product 😾👍');
+        return redirect()->route('products.index')->with('update', 'Berhasil update item 😾👍');
     }
 
     public function destroy($id)
@@ -92,7 +103,7 @@ class ProductController extends Controller
         $product = Product::findOrfail($id);
         $product->delete();
 
-        return redirect()->route('products.index')->with('success', 'Success delete product 😾👍');
+        return redirect()->route('products.index')->with('destroy', 'Berhasil menghapus item 😾👍');
     }
 
     public function export()
@@ -105,7 +116,7 @@ class ProductController extends Controller
         $file = $request->file('file');
         (new ProductsImport)->import($file);
 
-        return back()->with('success', 'Berhasil import data product 😾👍');
+        return back()->with('success', 'Berhasil import data item 😾👍');
     }
 
     public function import()

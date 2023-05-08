@@ -13,16 +13,16 @@
                 </thead>
                 <tbody class="pt-10 mt-10">
                     @foreach($categorys as $category)
-                    <tr class="">
-                        <td class="px-2 rounded-lg">
-                            <h3 class="text-xl py-1 uppercase">
-                                {{ $no++ }}.
-                                <a class="border-b-2 hover:border-sky-900 hover:text-sky-900 border-dotted border-gray-700" href="{{ route('catalogue.category', $category->id) }}">
-                                    {{ $category->nama_kategori }}
-                                </a>
-                            </h3>
-                        </td>
-                    </tr>
+                        <tr class="">
+                            <td class="px-2 rounded-lg">
+                                <h3 class="text-xl py-1 uppercase">
+                                    {{ $no++ }}.
+                                    <a class="border-b-2 hover:border-sky-900 hover:text-sky-900 border-dotted border-gray-700" href="{{ route('catalogue.category', $category->id) }}">
+                                        {{ $category->nama_kategori }}
+                                    </a>
+                                </h3>
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
@@ -37,6 +37,7 @@
             <div class="border-b-2 mb-10 py-2 border-dotted mx-auto justify-center w-2/4 border-blue-600">
                 <h1 class="text-6xl text-center font-extrabold">Catalogue.</h1>
             </div>
+            @if ($products->count() > 0)
             @foreach($products as $product)
                 <div class="border-2 grayscale hover:grayscale-0 hover:border-indigo-500 transform transition duration-500 hover:scale-110 hover:shadow-lg border-gray-600 float-right text-center content-center items-center justify-center hover:cursor-pointer mx-auto p-3 my-3 rounded-lg">
                     <img width="190" class="object-center mx-auto border-2 hover:border-indigo-500 border-gray-800 text-center justify-center rounded-lg" src="{{ asset('image/'.$product->image) }}" alt="Tidak ada gambar" />
@@ -50,6 +51,16 @@
                     </a>
                 </div>
               @endforeach
+              @else
+                <div class="mx-auto text-center py-5">
+                    <img width="200" class="object-cover mx-auto rounded-lg" width="100" height="100" src="{{ asset('404.svg') }}" />
+                        <h3 class="mt-8 text-gray-500 text-4xl font-extrabold">
+                            Ooops
+                            <br>
+                            Tidak ada data.
+                        </h3>
+                    </div>
+                @endif
             </div> 
             {{-- End --}}
     <section>
