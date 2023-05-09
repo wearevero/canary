@@ -6,9 +6,8 @@
 
 **_We Believe, Every Piece of Jewerly Tells a Radiant Story._**
 
-Veronique open-source catalogue system. 
-Using HMVC-ready architecture by default. 
-
+Veronique open-source catalogue system.
+Using HMVC-ready architecture by default.
 
 ## Motivation
 

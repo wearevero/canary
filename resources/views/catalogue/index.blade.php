@@ -40,12 +40,15 @@
             @if ($products->count() > 0)
             @foreach($products as $product)
                 <div class="border-2 grayscale hover:grayscale-0 hover:border-indigo-500 transform transition duration-500 hover:scale-110 hover:shadow-lg border-gray-600 float-right text-center content-center items-center justify-center hover:cursor-pointer mx-auto p-3 my-3 rounded-lg">
-                    <img width="190" class="object-center mx-auto border-2 hover:border-indigo-500 border-gray-800 text-center justify-center rounded-lg" src="{{ asset('image/'.$product->image) }}" alt="Tidak ada gambar" />
-                    <h3 class="my-5 text-md uppercase font-bold">
+                    <img width="190" class="object-center mx-auto text-center justify-center rounded-lg mb-5" src="{{ asset('image/'.$product->image) }}" alt="Tidak ada gambar" />
+                        <span class="border rounded-full bg-rose-800/20 text-rose-500 text-sm px-2 uppercase font-normal">
+                            {{ $product->category->nama_kategori }}
+                        </span>
+                    <h3 class="mb-5 mt-2 text-md uppercase font-bold">
                         {{ $product->no_item }}
                     </h3>
                     <a href="{{ route('products.show', $product->id) }}">
-                        <button class="px-3 flex mx-auto justify-center rounded-lg bg-blue-800/30 text-blue-500 border ease-in-out hover:bg-blue-800/10 border-blue-800 text-md">
+                        <button class="px-3 flex mx-auto justify-center rounded-lg bg-blue-800/30 text-blue-500 border ease-in-out hover:bg-blue-800/10 border-blue-500 text-md">
                             Detail Item
                         </button>
                     </a>
