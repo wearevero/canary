@@ -39,7 +39,7 @@
             </div>
             @if ($products->count() > 0)
             @foreach($products as $product)
-                <div class="border-2 grayscale hover:grayscale-0 hover:border-indigo-500 transform transition duration-500 hover:scale-110 hover:shadow-lg border-gray-600 float-right text-center content-center items-center justify-center hover:cursor-pointer mx-auto p-3 my-3 rounded-lg">
+                <div class="border-2 hover:border-indigo-500 transform transition duration-500 hover:scale-110 hover:shadow-lg border-gray-600 float-right text-center content-center items-center justify-center hover:cursor-pointer mx-auto p-3 my-3 rounded-lg">
                     <img width="190" class="object-center mx-auto text-center justify-center rounded-lg mb-5" src="{{ asset('image/'.$product->image) }}" alt="Tidak ada gambar" />
                         <span class="border rounded-full bg-rose-800/20 text-rose-500 text-sm px-2 uppercase font-normal">
                             {{ $product->category->nama_kategori }}
