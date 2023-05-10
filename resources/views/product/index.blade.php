@@ -1,11 +1,8 @@
 <x-app-layout title="Products">
     <x-slot name="header">
-            <h2 class="font-semibold text-gray-500 text-xl dark:text-gray-200 leading-tight">
-                on sitemap: 
-                <code class="text-indigo-500 underline italic">
-                    {{ route('products.index') }}
-                </code>
-            </h2>
+        <h2 class="p-3 text-center border rounded-lg max-w-md font-semibold bg-indigo-400 text-xl text-white dark:text-gray-200 leading-tight">
+            sitemap: {{ Request::url() }}
+        </h2>
     </x-slot>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
