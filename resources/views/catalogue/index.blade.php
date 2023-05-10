@@ -4,7 +4,7 @@
         {{-- Side bar category --}}
         <div class="bg-white dark:bg-gray-800 shadow-sm h-full w-1/3 px-7 py-5 text-left rounded-lg">
             <table>
-                <thead class="text-5xl font-extrabold">
+                <thead class="text-6xl font-extrabold">
                     <tr>
                         <th class="pb-5 py-7">
                             Category
@@ -34,8 +34,8 @@
 
         {{-- Card category result --}}
         <div class="bg-white shadow-sm space-x-4 px-7 w-2/3 mx-auto justify-center text-center py-10 rounded-lg items-center">
-            <div class="border-b-2 mb-10 py-2 border-dotted mx-auto justify-center w-2/4 border-blue-600">
-                <h1 class="text-6xl text-center font-extrabold">Catalogue.</h1>
+            <div class="mb-10 py-2 mx-auto justify-center w-2/4">
+                <h1 class="text-6xl text-center font-extrabold">This is Catalogue...</h1>
             </div>
             @if ($products->count() > 0)
             @foreach($products as $product)
@@ -48,8 +48,8 @@
                         {{ $product->no_item }}
                     </h3>
                     <a href="{{ route('products.show', $product->id) }}">
-                        <button class="px-3 flex mx-auto justify-center rounded-lg bg-blue-800/30 text-blue-500 border ease-in-out hover:bg-blue-800/10 border-blue-500 text-md">
-                            Detail Item
+                        <button class="px-3 flex mx-auto justify-center rounded-lg bg-sky-800/20 text-sky-500 border ease-in-out hover:bg-blue-800/30 border-blue-500 text-md">
+                            Lihat detail
                         </button>
                     </a>
                 </div>
