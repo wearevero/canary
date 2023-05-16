@@ -17,7 +17,7 @@
                     @endif
 
 
-                    {{-- testing input group --}}
+                    {{-- testing input group section --}}
                         <form method="post" action="{{  route('products.store') }}" enctype="multipart/form-data" class="py-5 text-lg items-center justify-center">
                             @csrf
                             <h1 class="text-xl mt-10 mb-5 font-bold">Data &nbsp;<span class="font-semibold px-3 bg-rose-500/20 rounded-lg text-rose-500 border border-rose-500 text-sm">wajib diisi</span></h1>

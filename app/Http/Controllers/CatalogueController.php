@@ -10,7 +10,7 @@ class CatalogueController extends Controller
     public function index()
     {
         $categorys = Category::get();
-        $products = Product::get();
+        $products = Product::latest()->get();
 
         return view('catalogue.index', compact('products', 'categorys'))->with('no', 1);
     }
