@@ -30,7 +30,7 @@
                                     <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $no++ }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $user->name }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">{{ $user->email }}</td>
-                                    <td class="whitespace-nowrap px-6 py-4">{{ $user->role }}</td>
+                                    <td class="whitespace-nowrap px-6 capitalize py-4">{{ $user->role }}</td>
                                     <td class="whitespace-nowrap px-6 py-4">
                                         @if ($user->email_verified_at != null) 
                                             <p class="bg-sky-800/20 py-1 rounded-md text-sky-600">

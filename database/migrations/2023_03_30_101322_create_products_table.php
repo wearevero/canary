@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('no_item');
             $table->foreignId('id_kategori');
-            $table->string('image')->nullable();
+            $table->char('image')->nullable();
             $table->string('size')->nullable()->default('-');
             $table->string('size_stone')->nullable()->default('-');
             $table->string('qty_stone')->nullable()->default('-');

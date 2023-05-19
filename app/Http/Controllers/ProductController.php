@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Exports\ProductsExport;
 use App\Imports\ProductsImport;
 use App\Models\Category;
@@ -13,7 +12,6 @@ class ProductController extends Controller
     public function __construct()
     {
         $this->middleware(['auth']);
-
         return view('product.index');
     }
 
@@ -31,7 +29,6 @@ class ProductController extends Controller
     public function create()
     {
         $categorys = Category::select('id', 'nama_kategori')->get();
-
         return view('product.create', compact('categorys'));
     }
 
@@ -49,9 +46,9 @@ class ProductController extends Controller
         $input = $request->all();
         if ($image = $request->file('image')) {
             $destinationPath = 'image/';
-            $profileImage = date('YmdHis').'.'.$image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
+            $itemImage = str_replace(str_split('~\/:*?<>|?+: '), "-", $request['no_item']).'.'.$image->getClientOriginalExtension();
+            $image->move($destinationPath, $itemImage);
+            $input['image'] = "$itemImage";
         }
         Product::create($input);
 
@@ -89,12 +86,11 @@ class ProductController extends Controller
         $update['qty_stone'] = $request->get('qty_stone');
         if ($files = $request->file('image')) {
             $destinationPath = 'image/';
-            $profileImage = date('YmdHis').'.'.$files->getClientOriginalExtension();
-            $files->move($destinationPath, $profileImage);
-            $update['image'] = "$profileImage";
+            $itemImage = str_replace(str_split('~\/:*?<>|?+: '), "-", $request['no_item']).'.'.$files->getClientOriginalExtension();
+            $files->move($destinationPath, $itemImage);
+            $update['image'] = "$itemImage";
         }
         Product::where('id', $id)->update($update);
-
         return redirect()->route('products.index')->with('update', 'Berhasil update item 😾👍');
     }
 
@@ -102,7 +98,6 @@ class ProductController extends Controller
     {
         $product = Product::findOrfail($id);
         $product->delete();
-
         return redirect()->route('products.index')->with('destroy', 'Berhasil menghapus item 😾👍');
     }
 
@@ -115,7 +110,6 @@ class ProductController extends Controller
     {
         $file = $request->file('file');
         (new ProductsImport)->import($file);
-
         return back()->with('success', 'Berhasil import data item 😾👍');
     }
 
