@@ -6,6 +6,7 @@ use App\Imports\ProductsImport;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert as Alert;
 
 class ProductController extends Controller
 {
@@ -52,7 +53,8 @@ class ProductController extends Controller
         }
         Product::create($input);
 
-        return redirect()->route('products.index')->with('create', 'Berhasil menambah item 🥳');
+        Alert::success('Berhasil 🎉🥳', 'Berhasil menambahkan data');
+        return redirect()->route('products.index');
     }
 
     public function show($id)
@@ -91,14 +93,18 @@ class ProductController extends Controller
             $update['image'] = "$itemImage";
         }
         Product::where('id', $id)->update($update);
-        return redirect()->route('products.index')->with('update', 'Berhasil update item 😾👍');
+        
+        Alert::success('Berhasil 🎉🥳', 'Berhasil mengubah data' . $request->no_item);
+        return redirect()->route('products.index');
     }
 
     public function destroy($id)
     {
         $product = Product::findOrfail($id);
         $product->delete();
-        return redirect()->route('products.index')->with('destroy', 'Berhasil menghapus item 😾👍');
+        
+        Alert::success('Berhasil 🎉🥳', 'Berhasil menghapus data' . $product);
+        return redirect()->route('products.index');
     }
 
     public function export()
