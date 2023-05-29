@@ -94,7 +94,7 @@ class ProductController extends Controller
         }
         Product::where('id', $id)->update($update);
         
-        Alert::success('Berhasil 🎉🥳', 'Berhasil mengubah data' . $request->no_item);
+        Alert::success('Berhasil 🎉🥳', 'Berhasil mengubah data ' . $request->no_item);
         return redirect()->route('products.index');
     }
 
@@ -103,7 +103,7 @@ class ProductController extends Controller
         $product = Product::findOrfail($id);
         $product->delete();
         
-        Alert::success('Berhasil 🎉🥳', 'Berhasil menghapus data' . $product);
+        Alert::success('Berhasil 🎉🥳', 'Berhasil menghapus data ' . $product);
         return redirect()->route('products.index');
     }
 
@@ -116,7 +116,9 @@ class ProductController extends Controller
     {
         $file = $request->file('file');
         (new ProductsImport)->import($file);
-        return back()->with('success', 'Berhasil import data item 😾👍');
+
+        Alert::success('Berhasil 🎉🥳', 'Berhasil import data');
+        return back();
     }
 
     public function import()
