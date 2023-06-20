@@ -22,9 +22,12 @@
                         </div>
                         <x-alert/>
                         <form method="get">
-                            <input type="text" name="keyword" class="px-3 py-2 border rounded-lg border-slate-500" placeholder="Cari no. item" placeholder="{{ old('keyword') }}" />
+                            <input type="text" value="{{ request('keyword') }}" name="keyword" class="px-3 py-2 border rounded-lg border-slate-500" placeholder="Cari no. item" placeholder="{{ old('keyword') }}" />
                             <button type="submit" class="bg-sky-800/10 border border-sky-800 text-sky-500 py-2 px-3 rounded-lg hover:bg-sky-300/20">
                                 Search
+                            </button>
+                            <button type="submit" name="keyword" class="bg-rose-800/10 border border-rose-800 text-rose-500 py-2 px-3 rounded-lg hover:bg-rose-300/20">
+                                Reset
                             </button>
                         </form>
                     </div>
