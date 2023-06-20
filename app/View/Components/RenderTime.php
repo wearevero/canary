@@ -21,6 +21,6 @@ class RenderTime extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.render-time');
+        return view("components.render-time");
     }
 }

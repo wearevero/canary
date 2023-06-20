@@ -6,8 +6,7 @@
         "dev": "vite",
         "build": "vite build",
         "format": "./vendor/bin/pint",
-        "pretty": "npx prettier --w .",
-        "prettier": "prettier"
+        "pretty": "npx prettier --w ."
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
@@ -23,10 +22,6 @@
     "dependencies": {
         "@preline/remove-element": "^1.3.0",
         "@prettier/plugin-php": "^0.19.5",
-        "i": "^0.3.7",
-        "install": "^0.13.0",
-        "run": "^1.4.0",
-        "sweetalert2": "^11.7.8",
-        "update": "^0.7.4"
+        "sweetalert2": "^11.7.8"
     }
 }

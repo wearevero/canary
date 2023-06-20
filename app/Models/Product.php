@@ -10,27 +10,27 @@ class Product extends Model
 {
     use HasFactory, Searchable;
 
-    protected $table = 'products';
+    protected $table = "products";
 
     protected $fillable = [
-        'no_item',
-        'id_kategori',
-        'image',
-        'size',
-        'size_stone',
-        'qty_stone',
+        "no_item",
+        "id_kategori",
+        "image",
+        "size",
+        "size_stone",
+        "qty_stone",
     ];
 
     public function toSearchableArray(): array
     {
         return [
-            'no_item' => $this->no_item,
-            'id_kategori' => $this->id_kategori,
+            "no_item" => $this->no_item,
+            "id_kategori" => $this->id_kategori,
         ];
     }
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'id_kategori');
+        return $this->belongsTo(Category::class, "id_kategori");
     }
 }

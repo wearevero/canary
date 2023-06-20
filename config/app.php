@@ -3,23 +3,23 @@
 use Illuminate\Support\Facades\Facade;
 
 return [
-    'name' => env('APP_NAME', 'Catalogue'),
-    'env' => env('APP_ENV', 'production'),
-    'debug' => (bool) env('APP_DEBUG', true),
-    'url' => env('APP_URL', 'http://localhost'),
-    'asset_url' => env('ASSET_URL', '/'),
-    'timezone' => 'Asia/Jakarta',
-    'locale' => 'id',
-    'fallback_locale' => 'id',
-    'faker_locale' => 'id_ID',
-    'key' => env('APP_KEY'),
-    'cipher' => 'AES-256-CBC',
-    'maintenance' => [
-        'driver' => 'file',
+    "name" => env("APP_NAME", "Catalogue"),
+    "env" => env("APP_ENV", "production"),
+    "debug" => (bool) env("APP_DEBUG", true),
+    "url" => env("APP_URL", "http://localhost"),
+    "asset_url" => env("ASSET_URL", "/"),
+    "timezone" => "Asia/Jakarta",
+    "locale" => "id",
+    "fallback_locale" => "id",
+    "faker_locale" => "id_ID",
+    "key" => env("APP_KEY"),
+    "cipher" => "AES-256-CBC",
+    "maintenance" => [
+        "driver" => "file",
         // 'store'  => 'redis',
     ],
 
-    'providers' => [
+    "providers" => [
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -52,10 +52,11 @@ return [
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
     ],
 
-    'aliases' => Facade::defaultAliases()->merge([
-        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
-        // 'ExampleClass' => App\Example\ExampleClass::class,
-    ])->toArray(),
-
+    "aliases" => Facade::defaultAliases()
+        ->merge([
+            "Excel" => Maatwebsite\Excel\Facades\Excel::class,
+            "Alert" => RealRashid\SweetAlert\Facades\Alert::class,
+            // 'ExampleClass' => App\Example\ExampleClass::class,
+        ])
+        ->toArray(),
 ];

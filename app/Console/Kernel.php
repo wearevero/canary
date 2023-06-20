@@ -9,12 +9,14 @@ class Kernel extends ConsoleKernel
 {
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command(\Spatie\Health\Commands\RunHealthChecksCommand::class)->everyMinute();
+        $schedule
+            ->command(\Spatie\Health\Commands\RunHealthChecksCommand::class)
+            ->everyMinute();
     }
 
     protected function commands(): void
     {
-        $this->load(__DIR__.'/Commands');
-        require base_path('routes/console.php');
+        $this->load(__DIR__ . "/Commands");
+        require base_path("routes/console.php");
     }
 }

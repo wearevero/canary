@@ -15,23 +15,16 @@ class User extends Authenticatable
     public function toSearchableArray(): array
     {
         return [
-            'name' => $this->name,
-            'email' => $this->email,
+            "name" => $this->name,
+            "email" => $this->email,
         ];
     }
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $fillable = ["name", "email", "password"];
 
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $hidden = ["password", "remember_token"];
 
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        "email_verified_at" => "datetime",
     ];
 }

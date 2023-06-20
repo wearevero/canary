@@ -21,6 +21,6 @@ class CatalogueImage extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.catalogue-image');
+        return view("components.catalogue-image");
     }
 }

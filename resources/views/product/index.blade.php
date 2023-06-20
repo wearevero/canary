@@ -62,8 +62,8 @@
                                             <form action="{{ route('products.delete', $product->id) }}" class="flex" method="post">
                                                 @method('delete')
                                                 @csrf
-                                                <button type="submit" title="Delete" class="bg-rose-500/20 border border-rose-500 rounded-lg py-2 px-3">
-                                                    <x-feathericon-trash class="text-rose-500 hover:text-rose-400" />
+                                                <button type="submit" value="DELETE" title="Delete" class="bg-rose-500/20 border border-rose-500 rounded-lg py-2 px-3">
+                                                    <x-feathericon-trash class="show_confirmDelete text-rose-500 hover:text-rose-400" />
                                                 </button>
                                             </form>
                                         @endif
