@@ -20,7 +20,8 @@
         "maatwebsite/excel": "^3.1",
         "nunomaduro/termwind": "^1.15",
         "realrashid/sweet-alert": "^7.0",
-        "spatie/laravel-activitylog": "^4.7"
+        "spatie/laravel-activitylog": "^4.7",
+        "spatie/laravel-backup": "^8.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.8",
