@@ -15,10 +15,16 @@ return [
 
         "mysql" => [
             "driver" => "mysql",
+            'dump' => [
+                'dump_binary_path' => 'C:\laragon\bin\mysql\mysql-8.0.30-winx64\bin', // only the path, so without `mysqldump` or `pg_dump`
+                'use_single_transaction',
+                'timeout' => 60 * 5, // 5 minute timeout
+                'exclude_tables' => ['table1', 'table2'],
+            ],
             "url" => env("DATABASE_URL", ""),
             "host" => env("DB_HOST", "http://localhost"),
             "port" => env("DB_PORT", "3306"),
-            "database" => env("DB_DATABASE", "catalogue"),
+            "database" => env("DB_DATABASE", "catalogue_dev"),
             "username" => env("DB_USERNAME", "root"),
             "password" => env("DB_PASSWORD", "kridopambudi12"),
             "unix_socket" => env("DB_SOCKET", ""),
