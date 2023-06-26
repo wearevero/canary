@@ -12,7 +12,6 @@ use Spatie\Health\Checks\Checks\EnvironmentCheck;
 use Spatie\Health\Checks\Checks\FlareErrorOccurrenceCountCheck;
 use Spatie\Health\Checks\Checks\PingCheck;
 use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
-use Spatie\Health\Facades\Health;
 
 class AppServiceProvider extends ServiceProvider
 {

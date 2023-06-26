@@ -13,32 +13,30 @@ return [
             "foreign_key_constraints" => env("DB_FOREIGN_KEYS", true),
         ],
 
-        "mysql" => [
-            "driver" => "mysql",
+        'mysql' => [
+            'driver' => 'mysql',
             'dump' => [
-                'dump_binary_path' => 'C:\laragon\bin\mysql\mysql-8.0.30-winx64\bin', // only the path, so without `mysqldump` or `pg_dump`
+                'dump_binary_path' => 'c:\laragon\bin\mysql\mysql-8.0.30-winx64/bin',
                 'use_single_transaction',
-                'timeout' => 60 * 5, // 5 minute timeout
+                'timeout' => 60 * 5,
                 'exclude_tables' => ['table1', 'table2'],
             ],
-            "url" => env("DATABASE_URL", ""),
-            "host" => env("DB_HOST", "http://localhost"),
-            "port" => env("DB_PORT", "3306"),
-            "database" => env("DB_DATABASE", "catalogue_dev"),
-            "username" => env("DB_USERNAME", "root"),
-            "password" => env("DB_PASSWORD", "kridopambudi12"),
-            "unix_socket" => env("DB_SOCKET", ""),
-            "charset" => "utf8mb4",
-            "collation" => "utf8mb4_unicode_ci",
-            "prefix" => "",
-            "prefix_indexes" => true,
-            "strict" => true,
-            "engine" => null,
-            "options" => extension_loaded("pdo_mysql")
-                ? array_filter([
-                    PDO::MYSQL_ATTR_SSL_CA => env("MYSQL_ATTR_SSL_CA"),
-                ])
-                : [],
+            'url' => env('DATABASE_URL', ''),
+            'host' => env('DB_HOST', 'http://localhost'),
+            'port' => env('DB_PORT', '3366'),
+            'database' => env('DB_DATABASE', 'catalogue'),
+            'username' => env('DB_USERNAME', 'root'),
+            'password' => env('DB_PASSWORD', 'kridopambudi12'),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
         ],
 
         "pgsql" => [

@@ -50,9 +50,9 @@
                         <h3 class="my-5 text-md uppercase font-bold">
                             {{ $product->no_item }}
                         </h3>
-                        <button class="px-2 py-1 flex mx-auto justify-center rounded-lg bg-blue-800/30 text-blue-500 border ease-in-out hover:bg-blue-800/10 border-blue-800 text-md">
+                        <a href="{{ route('products.show', $product->id) }}" class="px-2 py-1 flex mx-auto justify-center rounded-lg bg-blue-800/30 text-blue-500 border ease-in-out hover:bg-blue-800/10 border-blue-800 text-md">
                             Detail
-                        </button>
+                        </a>
                     </div>
                 @endforeach
             @else

@@ -10,19 +10,17 @@
                             <a href="{{ route('products.create') }}" class="px-3 py-2 hover:bg-green-300/10 border rounded-lg bg-green-500/10 text-green-500 border-green-800">
                                 Add product +
                             </a>
-                            @endif
-
-                            <a href="{{ route('products.export') }}" class="px-3 py-2 hover:bg-yellow-300/10 border rounded-lg bg-yellow-500/10 text-yellow-500 border-yellow-800">
-                                Export
-                            </a>
-
                             <a href="{{ route('products.import') }}" class="px-3 py-2 hover:bg-indigo-300/10 border rounded-lg bg-indigo-500/10 text-indigo-500 border-indigo-800">
                                 Import
+                            </a>
+                            @endif
+                            <a href="{{ route('products.export') }}" class="px-3 py-2 hover:bg-yellow-300/10 border rounded-lg bg-yellow-500/10 text-yellow-500 border-yellow-800">
+                                Export
                             </a>
                         </div>
                         <x-alert/>
                         <form method="get">
-                            <input type="text" value="{{ request('keyword') }}" name="keyword" class="px-3 py-2 border rounded-lg border-slate-500" placeholder="Cari no. item" placeholder="{{ old('keyword') }}" />
+                            <input type="text" name="keyword" value="{{ request('keyword') }}" class="px-3 py-2 border rounded-lg border-slate-500" placeholder="Cari no. item" />
                             <button type="submit" class="bg-sky-800/10 border border-sky-800 text-sky-500 py-2 px-3 rounded-lg hover:bg-sky-300/20">
                                 Search
                             </button>
@@ -76,7 +74,7 @@
                         </tbody>
                       </table>
                       <div class="mt-5 justify-between">
-                        {{ $products->links() }}
+                        {{ $products->appends($_GET)->links() }}
                         <x-render-time />
                     </div>
                 </div>
