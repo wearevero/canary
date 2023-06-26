@@ -11,8 +11,8 @@
                 <div class="p-10 text-gray-900 dark:text-gray-100">
                     <h1 class="text-left flex items-center justify-center text-5xl font-bold py-5">
                         We Believe...
-                        <br> 
-                        Every Piece of Jewerly Tells a Radiant Story.
+                        <br>
+                        Every Piece of Jewelry Tells a Radiant Story.
                     </h1>
                 </div>
             </div>

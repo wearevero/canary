@@ -19,9 +19,9 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         if ($request->keyword) {
-            $products = Product::search($request->keyword)->paginate(10);
+            $products = Product::search($request->keyword)->paginate(5);
         } else {
-            $products = Product::with('category')->select('id', 'no_item', 'image', 'id_kategori')->paginate(10);
+            $products = Product::with('category')->select('id', 'no_item', 'image', 'id_kategori')->paginate(5);
         }
 
         return view('product.index', compact('products'))->with('no', 1);

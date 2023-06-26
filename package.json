@@ -9,6 +9,7 @@
         "pretty": "npx prettier --w ."
     },
     "devDependencies": {
+        "@preline/remove-element": "^1.3.0",
         "@tailwindcss/forms": "^0.5.2",
         "alpinejs": "^3.12.2",
         "autoprefixer": "^10.4.2",
@@ -20,11 +21,6 @@
         "vite": "^4.3.9"
     },
     "dependencies": {
-        "@preline/remove-element": "^1.3.0",
-        "i": "^0.3.7",
-        "install": "^0.13.0",
-        "run": "^1.4.0",
-        "sweetalert2": "^11.7.12",
-        "update": "^0.7.4"
+        "sweetalert2": "^11.7.12"
     }
 }

@@ -15,9 +15,15 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
+            'dump' => [
+                'dump_binary_path' => 'c:\laragon\bin\mysql\mysql-8.0.30-winx64/bin',
+                'use_single_transaction',
+                'timeout' => 60 * 5,
+                'exclude_tables' => ['table1', 'table2'],
+            ],
             'url' => env('DATABASE_URL', ''),
             'host' => env('DB_HOST', 'http://localhost'),
-            'port' => env('DB_PORT', '3306'),
+            'port' => env('DB_PORT', '3366'),
             'database' => env('DB_DATABASE', 'catalogue'),
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', 'kridopambudi12'),
