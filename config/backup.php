@@ -46,7 +46,6 @@ return [
                  * Set to `null` to include complete absolute path
                  * Example: base_path()
                  */
-                'relative_path' => null,
             ],
 
             /*
@@ -148,8 +147,6 @@ return [
      * You can also use your own notification classes, just make sure the class is named after one of
      * the `Spatie\Backup\Notifications\Notifications` classes.
      */
-    'notifications' => [
-
         'notifications' => [
             \Spatie\Backup\Notifications\Notifications\BackupHasFailedNotification::class => ['mail'],
             \Spatie\Backup\Notifications\Notifications\UnhealthyBackupWasFoundNotification::class => ['mail'],
@@ -167,7 +164,6 @@ return [
 
         'mail' => [
             'to' => 'your@example.com',
-
             'from' => [
                 'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
                 'name' => env('MAIL_FROM_NAME', 'Example'),
@@ -185,7 +181,6 @@ return [
             'username' => null,
 
             'icon' => null,
-
         ],
 
         'discord' => [
@@ -241,7 +236,6 @@ return [
          * delete the newest backup.
          */
         'strategy' => \Spatie\Backup\Tasks\Cleanup\Strategies\DefaultStrategy::class,
-
         'default_strategy' => [
 
             /*

@@ -34,4 +34,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.js" integrity="sha512-s42K+c79ocIz9pmPOKe2FHtlrpqKLiLi+kMsd56kNszNvHLiUyDTMue+nXK9ARDOVHCujp++xeEp1/3DObtbrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        $('.show_confirmDelete').click(function(event) {
+            var form =  $(this).closest("form");
+            var name = $(this).data("name");
+            event.preventDefault();
+            swal({
+                title: `Ooops!`,
+                text: "Apakah kamu yakin ingin menghapus data?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+            if (willDelete) {
+                form.submit();
+            }
+            });
+        });
+        $('.show_confirmEdit').click(function(event) {
+            var form =  $(this).closest("form");
+            var name = $(this).data("name");
+            event.preventDefault();
+            swal({
+                title: `Peringatan!`,
+                text: `Apakah kamu yakin ingin mengubah data?`,
+                icon: `info`,
+                buttons: true,
+            })
+            .then((willEdit) => {
+            if (willEdit) {
+                form.submit();
+            }
+            });
+        });
+    </script>
     </html>

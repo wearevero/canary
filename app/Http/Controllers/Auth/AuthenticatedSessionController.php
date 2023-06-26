@@ -13,7 +13,7 @@ class AuthenticatedSessionController extends Controller
 {
     public function create(): View
     {
-        return view('auth.login');
+        return view("auth.login");
     }
 
     public function store(LoginRequest $request): RedirectResponse
@@ -21,15 +21,15 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
 
-        return redirect('/dashboard');
+        return redirect("/dashboard");
     }
 
     public function destroy(Request $request): RedirectResponse
     {
-        Auth::guard('web')->logout();
+        Auth::guard("web")->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect("/");
     }
 }

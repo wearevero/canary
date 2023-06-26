@@ -10,11 +10,10 @@ class alert extends Component
 {
     public function __construct()
     {
-        
     }
 
     public function render(): View|Closure|string
     {
-        return view('components.alert');
+        return view("components.alert");
     }
 }

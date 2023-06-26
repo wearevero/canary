@@ -10,11 +10,10 @@ class banner extends Component
 {
     public function __construct()
     {
-        
     }
 
     public function render(): View|Closure|string
     {
-        return view('components.banner');
+        return view("components.banner");
     }
 }
