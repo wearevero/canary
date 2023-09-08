@@ -87,21 +87,24 @@ class ProductController extends Controller
     {
         $product = Product::findOrfail($id);
         $categorys = Category::get();
+        $main_categorys = MasterCategory::get();
 
-        return view("product.edit", compact("product", "categorys"));
+        return view("product.edit", compact("product", "categorys", "main_categorys"));
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
             "no_item" => "required",
-            "id_kategori" => "required",
+            "id_main_category" => "required",
+            "id_sub_category" => "required",
             "size" => "nullable",
             "size_stone" => "nullable",
             "qty_stone" => "nullable",
         ]);
         $update["no_item"] = $request->get("no_item");
-        $update["id_kategori"] = $request->get("id_kategori");
+        $update["id_main_category"] = $request->get("id_main_category");
+        $update["id_sub_category"] = $request->get("id_sub_category");
         $update["size"] = $request->get("size");
         $update["size_stone"] = $request->get("size_stone");
         $update["qty_stone"] = $request->get("qty_stone");

@@ -20,7 +20,7 @@
                                 <a href="{{ route('catalogue.category', $category->id) }}" @if (url()->current() == route('catalogue.category', $category->id))
                                     @class(['active', 'text-rose-500 border-b-2 hover:border-rose-500 hover:text-black dark:hover:text-slate-100 dark:border-dotted border-rose-500 hover:border-slate-100' => true])
                                     @endif
-                                    class="hover:border-sky-900 hover:text-rose-500">
+                                    class="hover:border-sky-900 hover:border-b hover:text-rose-500 dark:hover:border-rose-500">
                                     {{ $category->nama_kategori }}
                                 </a>
                             </h3>

@@ -53,11 +53,13 @@
                                     <option value="">
                                         Pilih Sub Category
                                     </option>
+                                    @if(old('id_main_category') > 0)
                                     @foreach ($categorys as $category)
                                     <option value="{{ $category->id_master_category }}">
                                         {{ $category->nama_kategori }}
                                     </option>
                                     @endforeach
+                                    @endif
                                     <select>
                             </div>
                             <!-- closing main & sub category -->
