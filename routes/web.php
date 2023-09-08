@@ -3,6 +3,7 @@
 // Look, this is list of routes alias jalan.... Jalan Kebenaran
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductEximController;
 use App\Http\Controllers\ProfileController;
@@ -12,9 +13,7 @@ use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
 Route::get("health", HealthCheckResultsController::class)->name("health");
 Route::view("/", "auth.login");
-Route::get("/dashboard", function () {
-    return view("dashboard");
-})
+Route::get("/dashboard", [DashboardController::class, 'index'])
     ->middleware(["auth"])
     ->name("dashboard");
 
