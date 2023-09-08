@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Exports\ProductsExport;
 use App\Imports\ProductsImport;
 use App\Models\Category;
+use App\Models\MasterCategory;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert as Alert;
@@ -16,12 +18,20 @@ class ProductController extends Controller
         return view("product.index");
     }
 
+    public function getCategory(Request $request)
+    {
+        $main_categorys = $request->input('id');
+        $category = Category::where('id_master_category', $main_categorys)->get();
+
+        return response()->json($category);
+    }
+
     public function index(Request $request)
     {
         if ($request->keyword) {
             $products = Product::search($request->keyword)->paginate(5);
         } else {
-            $products = Product::with('category')->select('id', 'no_item', 'image', 'id_kategori')->paginate(5);
+            $products = Product::with('category')->select('id', 'no_item', 'image', 'id_main_category', 'id_sub_category')->paginate(5);
         }
 
         return view("product.index", compact("products"))->with("no", 1);
@@ -29,15 +39,17 @@ class ProductController extends Controller
 
     public function create()
     {
+        $main_categorys = MasterCategory::select("id", "nama_category")->get();
         $categorys = Category::select("id", "nama_kategori")->get();
-        return view("product.create", compact("categorys"));
+        return view("product.create", compact("main_categorys", "categorys"));
     }
 
     public function store(Request $request)
     {
         $request->validate([
             "no_item" => "required",
-            "id_kategori" => "required",
+            "id_main_category" => "required",
+            "id_sub_category" => "required",
             "image" => "nullable|image|mimes:jpg,png,jpeg,gif,svg|max:5120",
             "size" => "nullable",
             "size_stone" => "nullable",

@@ -2,15 +2,13 @@
 
 namespace App\View\Components;
 
+use Carbon\Carbon;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class Footer extends Component
 {
-    /**
-     * Create a new component instance.
-     */
     public function __construct()
     {
         //
@@ -21,6 +19,9 @@ class Footer extends Component
      */
     public function render(): View|Closure|string
     {
-        return view("components.footer");
+        $date = Carbon::now();
+        $day = $date->format('l');
+        $day = ucfirst($day);
+        return view("components.footer", compact('day'));
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+// Look, this is list of routes alias jalan.... Jalan Kebenaran
+
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductEximController;
@@ -65,15 +67,12 @@ Route::controller(ProductController::class)
         Route::get("export", "export")->name("products.export");
     });
 
+// Route for handling auto-complete via ajax / jQuery
+Route::post('/autocomplete', [ProductController::class, 'getCategory'])->name('getCategory');
+
 // Exim (export & import) controller
-Route::get("importproduct", [ProductEximController::class, "import"])->name(
-    "exim.import"
-);
-Route::get("exportproduct", [ProductEximController::class, "export"])->name(
-    "exim.export"
-);
-Route::post("product", [ProductEximController::class, "importstore"])->name(
-    "exim.store"
-);
+Route::get("importproduct", [ProductEximController::class, "import"])->name("exim.import");
+Route::get("exportproduct", [ProductEximController::class, "export"])->name("exim.export");
+Route::post("product", [ProductEximController::class, "importstore"])->name("exim.store");
 
 require __DIR__ . "/auth.php";

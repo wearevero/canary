@@ -22,10 +22,11 @@ class CategoryController extends Controller
 
     public function show_category($id)
     {
-        $products = Product::where("id_kategori", $id)->get();
+        $products = Product::where("id_sub_category", $id)->get();
         $categorys = Category::select("id", "nama_kategori")->get();
+        $cat = Category::where("id", $id)->select('nama_kategori')->get();
 
-        return view("catalogue.slug", compact("products", "categorys"))->with(
+        return view("catalogue.slug", compact("products", "categorys", "cat"))->with(
             "no",
             1
         );

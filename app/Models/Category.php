@@ -10,7 +10,6 @@ class Category extends Model
     use HasFactory;
 
     protected $table = "categorys";
-
     protected $primaryKey = "id";
 
     public function product()
@@ -21,5 +20,10 @@ class Category extends Model
     public function catalog()
     {
         return $this->hasMany(Catalogue::class);
+    }
+
+    public function main_category()
+    {
+        return $this->belongsTo(MasterCategory::class);
     }
 }

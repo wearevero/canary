@@ -4,13 +4,15 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     public function up(): void
     {
         Schema::create("products", function (Blueprint $table) {
             $table->id();
             $table->string("no_item");
-            $table->foreignId("id_kategori");
+            $table->foreignId("id_main_category");
+            $table->foreignId("id_sub_category");
             $table->char("image")->nullable();
             $table
                 ->string("size")

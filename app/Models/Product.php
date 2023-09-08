@@ -14,7 +14,8 @@ class Product extends Model
 
     protected $fillable = [
         "no_item",
-        "id_kategori",
+        "id_main_category",
+        "id_sub_category",
         "image",
         "size",
         "size_stone",
@@ -25,12 +26,18 @@ class Product extends Model
     {
         return [
             "no_item" => $this->no_item,
-            "id_kategori" => $this->id_kategori,
+            "id_main_category" => $this->id_main_category,
+            "id_sub_category" => $this->id_sub_category
         ];
     }
 
     public function category()
     {
-        return $this->belongsTo(Category::class, "id_kategori");
+        return $this->belongsTo(Category::class, "id_sub_category");
+    }
+
+    public function main_category()
+    {
+        return $this->belongsTo(MasterCategory::class, "id_main_category");
     }
 }
