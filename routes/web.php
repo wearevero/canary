@@ -4,6 +4,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductEximController;
 use App\Http\Controllers\ProfileController;
@@ -64,6 +65,14 @@ Route::controller(ProductController::class)
         Route::get("import", "import")->name("products.import");
         Route::post("/", "importstore")->name("products.importstore");
         Route::get("export", "export")->name("products.export");
+    });
+
+// Mangane route for handling all category and etc
+Route::controller(ManagerController::class)
+    ->prefix('manage')
+    ->middleware(['auth'])
+    ->group(function () {
+        Route::get('/', 'index')->name('manager.index');
     });
 
 // Route for handling auto-complete via ajax / jQuery

@@ -18,11 +18,16 @@
                     <x-nav-link :href="route('catalogue.index')" :active="request()->routeIs('catalogue.*')">
                         <x-feathericon-grid class="pl-1" /> &nbsp; {{ __('Catalogue') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('manager.index')" :active="request()->routeIs('manager.*')">
+                        <x-feathericon-settings class="pl-1" /> &nbsp; {{ __('Control Panel') }}
+                        <span class="px-2 bg-rose-700/10 text-rose-400 border border-rose-500 ml-2 rounded-full py-0.3">beta</span>
+                    </x-nav-link>
                     <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
                         <x-feathericon-user class="pl-1" /> &nbsp; {{ __('Users') }}
                     </x-nav-link>
                     <x-nav-link href="/health" target="blank" :active="request()->routeIs('/health')">
                         <x-feathericon-heart class="pl-1" /> &nbsp; {{ __('Health') }}
+                        <span class="px-2 bg-green-700/10 text-green-400 border border-green-500 ml-2 rounded-full py-0.3">new</span>
                     </x-nav-link>
                 </div>
             </div>
