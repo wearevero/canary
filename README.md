@@ -1,7 +1,5 @@
 <p align="center">
     <img src="/public/banner.png" />
-    <br>
-    <img src="/public/banner-2.png" />
 </p>
 
 # Catalogue
