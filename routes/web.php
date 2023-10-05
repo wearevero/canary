@@ -12,7 +12,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
-Route::get("health", HealthCheckResultsController::class)->name("health");
+Route::get('health', HealthCheckResultsController::class);
 Route::view("/", "auth.login");
 Route::get("/dashboard", [DashboardController::class, 'index'])
     ->middleware(["auth"])
@@ -73,6 +73,7 @@ Route::controller(ManagerController::class)
     ->middleware(['auth'])
     ->group(function () {
         Route::get('/', 'index')->name('manager.index');
+        Route::get('/main_category', 'main_category')->name('manager.mainCategoryIndex');
     });
 
 // Route for handling auto-complete via ajax / jQuery

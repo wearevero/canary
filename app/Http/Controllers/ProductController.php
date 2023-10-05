@@ -49,7 +49,7 @@ class ProductController extends Controller
         $request->validate([
             "no_item" => "required",
             "id_main_category" => "required",
-            "id_sub_category" => "required",
+            "id_sub_category" => "nullable",
             "image" => "nullable|image|mimes:jpg,png,jpeg,gif,svg|max:5120",
             "size" => "nullable",
             "size_stone" => "nullable",
@@ -97,7 +97,7 @@ class ProductController extends Controller
         $request->validate([
             "no_item" => "required",
             "id_main_category" => "required",
-            "id_sub_category" => "required",
+            "id_sub_category" => "required|nullable",
             "size" => "nullable",
             "size_stone" => "nullable",
             "qty_stone" => "nullable",

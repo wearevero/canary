@@ -13,6 +13,6 @@ class MasterCategory extends Model
 
     public function sub_category()
     {
-        return $this->hasMany(Category::class);
+        return $this->hasMany(Category::class, 'id_master_category');
     }
 }

@@ -12,6 +12,12 @@ class CategorySeeder extends Seeder
     {
         DB::table("categorys")->insert([
             [
+                "nama_kategori" => "Tidak Diketahui",
+                "id_master_category" => null,
+                "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
+                "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
+            ],
+            [
                 "nama_kategori" => "Ear Stud",
                 "id_master_category" => 1,
                 "created_at" => Carbon::now()->format("Y-m-d h:i:s"),

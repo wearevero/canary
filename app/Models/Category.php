@@ -24,6 +24,6 @@ class Category extends Model
 
     public function main_category()
     {
-        return $this->belongsTo(MasterCategory::class);
+        return $this->belongsTo(MasterCategory::class, 'id');
     }
 }

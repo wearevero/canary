@@ -1,4 +1,4 @@
-<x-app-layout title="Manager">
+<x-app-layout title="Control Panel">
     <div class="py-12 max-w-6xl mx-auto">
         <h1 class="mb-12 text-slate-100 text-6xl font-bold flex justify-center mx-auto px-8">
             <x-feathericon-settings class="text-orange-500" />
@@ -13,8 +13,15 @@
                         <br>
                         Main Category
                     </p>
-                    <div class="mt-3 text-lg">
+                    <div class="mt-5 text-lg">
                         <ul>
+                            <li class="flex items-center">
+                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-sky-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                </svg>
+                                &nbsp;
+                                <a href="{{ route('manager.mainCategoryIndex') }}" class="hover:text-sky-500">List all main category</a>
+                            </li>
                             <li class="flex items-center">
                                 <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />

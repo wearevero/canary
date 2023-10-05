@@ -50,8 +50,8 @@
                                     Sub Category
                                 </span>
                                 <select name="id_sub_category" id="sub_category" class="uppercase rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="666">
-                                    <option value="">
-                                        Pilih Sub Category
+                                    <option value="0">
+                                        Tidak Diketahui
                                     </option>
                                     @if(old('id_main_category') > 0)
                                     @foreach ($categorys as $category)
@@ -61,6 +61,9 @@
                                     @endforeach
                                     @endif
                                     <select>
+                                        @error('id_main_category')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                             </div>
                             <!-- closing main & sub category -->
                         </div>

@@ -6,7 +6,8 @@
         "dev": "vite",
         "build": "vite build",
         "format": "./vendor/bin/pint",
-        "pretty": "npx prettier --w ."
+        "pretty": "npx prettier --w .",
+        "analyze": "./vendor/bin/phpstan analyse"
     },
     "devDependencies": {
         "@preline/remove-element": "^1.3.0",
@@ -14,6 +15,7 @@
         "alpinejs": "^3.13.0",
         "autoprefixer": "^10.4.2",
         "axios": "^1.4.0",
+        "flowbite": "^1.8.1",
         "laravel-vite-plugin": "^0.8.0",
         "postcss": "^8.4.24",
         "prettier": "^3.0.3",

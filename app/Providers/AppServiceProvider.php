@@ -4,31 +4,25 @@ namespace App\Providers;
 
 use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
+use Spatie\Health\Checks\Checks\CacheCheck;
+use Spatie\Health\Checks\Checks\DatabaseCheck;
+use Spatie\Health\Checks\Checks\EnvironmentCheck;
+use Spatie\Health\Checks\Checks\OptimizedAppCheck;
+use Spatie\Health\Checks\Checks\PingCheck;
+use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
+use Spatie\Health\Facades\Health;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        // This is Health check monitor, we use it from Spatie package
-        // if u want to enable this feature, u should installing it in first
-
-        // Health::checks([
-        //     CacheCheck::new(),
-        //     DatabaseCheck::new(),
-        //     DatabaseSizeCheck::new()->failWhenSizeAboveGb(
-        //         errorThresholdGb: 1.0
-        //     ),
-        //     DebugModeCheck::new()->expectedToBe(true),
-        //     EnvironmentCheck::new()->expectEnvironment("local"),
-        //     FlareErrorOccurrenceCountCheck::new()->warnWhenMoreErrorsReceivedThan(
-        //         20
-        //     ),
-        //     UsedDiskSpaceCheck::new(),
-        //     PingCheck::new()
-        //         ->url("localhost:8000")
-        //         ->timeout(3)
-        //         ->name("Development Environment"),
-        // ]);
+        Health::checks([
+            OptimizedAppCheck::new(),
+            UsedDiskSpaceCheck::new(),
+            DatabaseCheck::new(),
+            CacheCheck::new(),
+            EnvironmentCheck::new()->expectEnvironment('local'),
+        ]);
     }
 
     public function boot(): void

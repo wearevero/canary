@@ -8,7 +8,7 @@
                         <x-application-logo class="block h-9 w-auto fill-current text-indigo-500 dark:text-gray-200" />
                     </a>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-12 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         <x-feathericon-home class="pl-1" /> &nbsp; {{ __('Dashboard') }}
                     </x-nav-link>
@@ -20,14 +20,14 @@
                     </x-nav-link>
                     <x-nav-link :href="route('manager.index')" :active="request()->routeIs('manager.*')">
                         <x-feathericon-settings class="pl-1" /> &nbsp; {{ __('Control Panel') }}
-                        <span class="px-2 bg-rose-700/10 text-rose-400 border border-rose-500 ml-2 rounded-full py-0.3">beta</span>
+                        <span class="px-2 bg-rose-700/30 text-rose-400 border border-rose-500 ml-2 rounded-full py-0.5">development</span>
                     </x-nav-link>
                     <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
                         <x-feathericon-user class="pl-1" /> &nbsp; {{ __('Users') }}
                     </x-nav-link>
-                    <x-nav-link href="/health" target="blank" :active="request()->routeIs('/health')">
+                    <x-nav-link href="/health?fresh" target="blank" :active="request()->routeIs('health?fresh')">
                         <x-feathericon-heart class="pl-1" /> &nbsp; {{ __('Health') }}
-                        <span class="px-2 bg-green-700/10 text-green-400 border border-green-500 ml-2 rounded-full py-0.3">new</span>
+                        <span class="px-2 bg-green-700/30 text-green-400 border border-green-500 ml-2 align-middle rounded-full py-0.5">new</span>
                     </x-nav-link>
                 </div>
             </div>

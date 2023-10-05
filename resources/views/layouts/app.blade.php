@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <link rel="stylesheet" type="text/css" href="css/xzoom.css" media="all" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.css" integrity="sha512-0IJ01kDH6fR7Oo1QEcyF+PgSLpefYXuGICVfNNoOseW6+HmsoaHzSZ7BAnwuu6BoK+nSn9WOeh0kiNjPNtGpuw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -25,10 +27,17 @@
                         id: subCategory
                     },
                     success: function(data) {
+                        var isFirstIteration = true;
                         $('#sub_category').empty();
                         if (data.length != null) {
+                            if (isFirstIteration) {
+                                $('#sub_category')
+                                    .prepend('<option value="' + 1 + '">' + 'Tidak Diketahui' + '</option>');
+                                isFirstIteration = false;
+                            }
                             $.each(data, function(key, value) {
-                                $('#sub_category').append('<option value="' + value.id_master_category + '">' + value.nama_kategori + '</option>');
+                                $('#sub_category')
+                                    .append('<option value="' + value.id_master_category + '">' + value.nama_kategori + '</option>');
                             });
                         }
                     }
@@ -56,6 +65,7 @@
         <x-footer />
     </div>
 </body>
+<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 <script type="text/javascript" src="https://unpkg.com/xzoom/dist/xzoom.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>

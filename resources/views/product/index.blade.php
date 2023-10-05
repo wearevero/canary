@@ -11,7 +11,7 @@
                                 Add product +
                             </a>
                             <a href="#" class="px-3 py-2 hover:bg-indigo-300/10 border rounded-lg bg-indigo-500/10 cursor-not-allowed text-indigo-500 border-indigo-800">
-                                Import (experimental)
+                                Import (development)
                             </a>
                             @endif
                             <a href="{{ route('products.export') }}" class="px-3 py-2 hover:bg-yellow-300/10 border rounded-lg bg-yellow-500/10 text-yellow-500 border-yellow-800">
