@@ -31,7 +31,7 @@ class ProductController extends Controller
         if ($request->keyword) {
             $products = Product::search($request->keyword)->paginate(5);
         } else {
-            $products = Product::with('category')->select('id', 'no_item', 'image', 'id_main_category', 'id_sub_category')->paginate(5);
+            $products = Product::with('main_category')->select('id', 'no_item', 'image', 'id_main_category')->paginate(5);
         }
 
         return view("product.index", compact("products"))->with("no", 1);
@@ -73,6 +73,8 @@ class ProductController extends Controller
         Product::create($input);
 
         Alert::success("Berhasil 🎉🥳", "Berhasil menambahkan data " . $request->no_item);
+        session()->flash('success', true);
+
         return redirect()->route("products.index");
     }
 
@@ -127,6 +129,8 @@ class ProductController extends Controller
             "Berhasil 🎉🥳",
             "Berhasil mengubah data " . $request->no_item
         );
+        session()->flash('alert_shown', true);
+
         return redirect()->route("products.index");
     }
 
@@ -136,6 +140,8 @@ class ProductController extends Controller
         $product->delete();
 
         Alert::success("Berhasil 🎉🥳", "Berhasil menghapus data " . $product->no_item);
+        session()->flash('alert_shown', true);
+
         return redirect()->route("products.index");
     }
 

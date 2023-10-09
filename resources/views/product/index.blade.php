@@ -36,7 +36,7 @@
                             <tr>
                                 <th scope="col" class="px-6 py-4">No</th>
                                 <th scope="col" class="px-6 py-4">No. Item</th>
-                                <th scope="col" class="px-6 py-4">Category</th>
+                                <th scope="col" class="px-6 py-4">Main Category</th>
                                 <th scope="col" class="px-6 py-4">Picture</th>
                                 <th scope="col" class="px-6 py-4">Action</th>
                             </tr>
@@ -46,13 +46,11 @@
                             <tr class="border-b font-semibold dark:border-neutral-500">
                                 <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $no++ }}</td>
                                 <td class="whitespace-nowrap px-6 py-4">{{ $product->no_item }}</td>
-                                <td class="whitespace-nowrap px-6 py-4">{{ $product->category->nama_kategori }}</td>
+                                <td class="whitespace-nowrap px-6 py-4">{{ $product->main_category->nama_category }}</td>
                                 <td>
-                                    <div class="xzoom-thumbs">
-                                        <a href="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}">
-                                            <img xpreview="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}" src="{{ asset('image/'.$product->image ?? 'tidak ada gambar') }}" alt="{{ $product->no_item }} tidak memiliki gambar" height="80" width="80" class="xzoom-gallery py-2 hover:cursor-pointer mx-auto rounded-md" title="{{ $product->no_item }}" />
-                                        </a>
-                                    </div>
+                                    <a href="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}">
+                                        <img mag-thumb="drag" src="{{ asset('image/'.$product->image ?? 'tidak ada gambar') }}" alt="{{ $product->no_item }} tidak memiliki gambar" height="80" width="100" class="py-2 hover:cursor-pointer mx-auto rounded-md" title="{{ $product->no_item }}" />
+                                    </a>
                                 </td>
                                 <td class="whitespace-nowrap flex align-middle justify-center space-x-5 py-12 items-center">
                                     <a href="{{ route('products.show', $product->id) }}" title="Detail" class="bg-sky-500/20 border border-sky-500 rounded-lg py-2 px-3">
@@ -84,3 +82,10 @@
         </div>
     </div>
 </x-app-layout>
+<script>
+    $host = $('[mag-thumb="drag"]');
+    $host.mag({
+        position: 'drag',
+        toggle: false
+    });
+</script>

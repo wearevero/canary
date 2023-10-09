@@ -15,4 +15,9 @@ class MasterCategory extends Model
     {
         return $this->hasMany(Category::class, 'id_master_category');
     }
+
+    public function product()
+    {
+        return $this->hasMany(Product::class, 'id_main_category');
+    }
 }

@@ -15,42 +15,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#main_category').on('change', function() {
-                var subCategory = $(this).val();
-                $.ajax({
-                    url: '/autocomplete',
-                    method: 'POST',
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                        id: subCategory
-                    },
-                    success: function(data) {
-                        var isFirstIteration = true;
-                        $('#sub_category').empty();
-                        if (data.length != null) {
-                            if (isFirstIteration) {
-                                $('#sub_category')
-                                    .prepend('<option value="' + 1 + '">' + 'Tidak Diketahui' + '</option>');
-                                isFirstIteration = false;
-                            }
-                            $.each(data, function(key, value) {
-                                $('#sub_category')
-                                    .append('<option value="' + value.id_master_category + '">' + value.nama_kategori + '</option>');
-                            });
-                        }
-                    }
-                });
-            });
-        });
-    </script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+        @if(session()->has('success'))
         @include('sweetalert::alert')
+        @endif
         @include('layouts.navigation')
         @if (isset($header))
         <header class="bg-white dark:bg-gray-800 shadow">
@@ -65,7 +37,6 @@
         <x-footer />
     </div>
 </body>
-<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 <script type="text/javascript" src="https://unpkg.com/xzoom/dist/xzoom.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
@@ -105,6 +76,45 @@
                 }
             });
     });
+
+    $(document).ready(function() {
+        $('#main_category').on('change', function() {
+            var subCategory = $(this).val();
+            $.ajax({
+                url: '/autocomplete',
+                method: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    id: subCategory
+                },
+                success: function(data) {
+                    var isFirstIteration = true;
+                    $('#sub_category').empty();
+                    if (data.length != null) {
+                        if (isFirstIteration) {
+                            $('#sub_category')
+                                .prepend('<option value="' + 7 + '">' + 'Tidak Diketahui' + '</option>');
+                            isFirstIteration = false;
+                        }
+                        $.each(data, function(key, value) {
+                            $('#sub_category')
+                                .append('<option value="' + value.id_master_category + '">' + value.nama_kategori + '</option>');
+                        });
+                    }
+                }
+            });
+        });
+    });
+
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('preview');
+            output.src = reader.result;
+            output.style.display = 'block';
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
 </script>
 
 </html>

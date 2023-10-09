@@ -38,6 +38,6 @@ class Product extends Model
 
     public function main_category()
     {
-        return $this->belongsTo(MasterCategory::class, "id_main_category");
+        return $this->belongsTo(MasterCategory::class, "id");
     }
 }

@@ -4,4 +4,9 @@
 
 :root {
     font-smooth: always;
+    scroll-behavior: smooth;
+}
+.dark-theme {
+    color: white;
+    background-color: rgb(1, 0, 26);
 }

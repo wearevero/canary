@@ -18,6 +18,11 @@ Route::get("/dashboard", [DashboardController::class, 'index'])
     ->middleware(["auth"])
     ->name("dashboard");
 
+Route::get('/css/{theme}', function ($theme) {
+
+    return response()->file(public_path('css/' . $theme . '-theme.css'), ['Content-Type' => 'text/css']);
+});
+
 // Profie group route
 Route::middleware("auth")->group(function () {
     Route::get("/profile", [ProfileController::class, "edit"])->name(

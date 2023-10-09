@@ -46,7 +46,13 @@ class MasterCategorySeeder extends Seeder
                 'slug' => 'pendant',
                 "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
                 "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
-            ]
+            ],
+            [
+                'nama_category' => 'Tidak ada',
+                'slug' => 'tidak-ada',
+                "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
+                "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
+            ],
         ]);
     }
 }
