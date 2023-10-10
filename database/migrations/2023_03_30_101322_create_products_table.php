@@ -8,30 +8,30 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create("products", function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string("no_item");
-            $table->foreignId("id_main_category");
-            $table->foreignId("id_sub_category");
-            $table->char("image")->nullable();
+            $table->string('no_item');
+            $table->foreignId('id_main_category');
+            $table->foreignId('id_sub_category');
+            $table->char('image')->nullable();
             $table
-                ->string("size")
+                ->string('size')
                 ->nullable()
-                ->default("-");
+                ->default('-');
             $table
-                ->string("size_stone")
+                ->string('size_stone')
                 ->nullable()
-                ->default("-");
+                ->default('-');
             $table
-                ->string("qty_stone")
+                ->string('qty_stone')
                 ->nullable()
-                ->default("-");
+                ->default('-');
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists("products");
+        Schema::dropIfExists('products');
     }
 };

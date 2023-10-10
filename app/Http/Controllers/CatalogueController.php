@@ -12,14 +12,14 @@ class CatalogueController extends Controller
         $categorys = Category::get();
         $products = Product::latest()->get();
 
-        return view("catalogue.index", compact("products", "categorys"))->with(
-            "no",
+        return view('catalogue.index', compact('products', 'categorys'))->with(
+            'no',
             1
         );
     }
 
     public function show_category(string $id)
     {
-        return view("catalogue.slug", compact("categorys"));
+        return view('catalogue.slug', compact('categorys'));
     }
 }

@@ -13,13 +13,13 @@ class UserController extends Controller
             $users = User::search($request->keyword)->paginate(10);
         } else {
             $users = User::select(
-                "name",
-                "email",
-                "role_name",
-                "email_verified_at"
+                'name',
+                'email',
+                'role_name',
+                'email_verified_at'
             )->paginate(10);
         }
 
-        return view("users.index", compact("users"))->with("no", 1);
+        return view('users.index', compact('users'))->with('no', 1);
     }
 }

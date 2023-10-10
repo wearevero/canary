@@ -19,6 +19,7 @@ class Footer extends Component
         $date = Carbon::now();
         $day = $date->format('l');
         $day = ucfirst($day);
-        return view("components.footer", compact('day'));
+
+        return view('components.footer', compact('day'));
     }
 }

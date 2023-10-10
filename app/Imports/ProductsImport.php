@@ -12,12 +12,7 @@ use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Throwable;
 
-class ProductsImport implements
-    ToCollection,
-    WithHeadingRow,
-    SkipsOnError,
-    WithBatchInserts,
-    WithChunkReading
+class ProductsImport implements ToCollection, WithHeadingRow, SkipsOnError, WithBatchInserts, WithChunkReading
 {
     use Importable;
 
@@ -25,9 +20,9 @@ class ProductsImport implements
     {
         foreach ($rows as $row) {
             $product = Product::create([
-                "no_item" => $row["no_item"],
-                "id_kategori" => $row["id_kategori"],
-                "image" => $row["gambar"],
+                'no_item' => $row['no_item'],
+                'id_kategori' => $row['id_kategori'],
+                'image' => $row['gambar'],
             ]);
         }
     }

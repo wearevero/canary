@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class MasterCategory extends Model
 {
     use HasFactory;
-    protected $table = "master_categorys";
-    protected $primaryKey = "id";
+
+    protected $table = 'master_categorys';
+
+    protected $primaryKey = 'id';
 
     public function sub_category()
     {

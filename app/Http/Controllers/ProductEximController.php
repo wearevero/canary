@@ -10,19 +10,19 @@ class ProductEximController extends Controller
 {
     public function productExport()
     {
-        return new ProductsExport();
+        return new ProductsExport;
     }
 
     public function import()
     {
-        return view("product.import");
+        return view('product.import');
     }
 
     public function importstore(Request $request)
     {
-        $file = $request->file("file");
-        (new ProductsImport())->import($file);
+        $file = $request->file('file');
+        (new ProductsImport)->import($file);
 
-        return back()->with("success", "Berhasil import data product 😾👍");
+        return back()->with('success', 'Berhasil import data product 😾👍');
     }
 }

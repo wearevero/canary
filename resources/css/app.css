@@ -14,13 +14,12 @@
 /* zoom image animation */
 .zoom {
     padding: 50px;
-    transition: transform .2s;
+    transition: transform 0.2s;
     width: 200px;
     height: 200px;
     margin: 0 auto;
-  }
-  
-  .zoom:hover {
-    transform: scale(1.5); 
-  }
+}
 
+.zoom:hover {
+    transform: scale(1.5);
+}

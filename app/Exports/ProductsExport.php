@@ -12,26 +12,20 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Events\AfterSheet;
 
-class ProductsExport implements
-    FromQuery,
-    Responsable,
-    ShouldAutoSize,
-    WithMapping,
-    WithHeadings,
-    WithEvents
+class ProductsExport implements FromQuery, Responsable, ShouldAutoSize, WithMapping, WithHeadings, WithEvents
 {
     use Exportable;
 
-    private $fileName = "Products.xlsx";
+    private $fileName = 'Products.xlsx';
 
     public function query()
     {
-        return Product::query()->with("category");
+        return Product::query()->with('category');
     }
 
     public function headings(): array
     {
-        return ["ID", "NO Item", "Nama Kategori", "Gambar"];
+        return ['ID', 'NO Item', 'Nama Kategori', 'Gambar'];
     }
 
     public function map($product): array
@@ -48,9 +42,9 @@ class ProductsExport implements
     {
         return [
             AfterSheet::class => function (AfterSheet $evet) {
-                $evet->sheet->getStyle("A1:D1")->applyFromArray([
-                    "font" => [
-                        "bold" => true,
+                $evet->sheet->getStyle('A1:D1')->applyFromArray([
+                    'font' => [
+                        'bold' => true,
                     ],
                 ]);
             },

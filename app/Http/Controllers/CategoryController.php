@@ -18,26 +18,26 @@ class CategoryController extends Controller
             ->get();
 
         return view(
-            "catalogue.index",
-            compact("products", "sub_categorys", "main_categorys")
+            'catalogue.index',
+            compact('products', 'sub_categorys', 'main_categorys')
         )
-            ->with("no", 1);
+            ->with('no', 1);
     }
 
     public function show_category($id)
     {
         $main_categorys = MasterCategory::with('sub_category')->get();
         $sub_categorys = MasterCategory::with('main_category')->where('id', 'id_master_category')->get();
-        $products = Product::where("id_sub_category", $id)->get();
+        $products = Product::where('id_sub_category', $id)->get();
         $categorys = Category::get();
-        $cat = Category::where("id", $id)->select('nama_kategori')->get();
+        $cat = Category::where('id', $id)->select('nama_kategori')->get();
 
         return view(
-            "catalogue.slug",
-            compact("products", "categorys", "cat", "main_categorys", "sub_categorys")
+            'catalogue.slug',
+            compact('products', 'categorys', 'cat', 'main_categorys', 'sub_categorys')
         )
             ->with(
-                "no",
+                'no',
                 1
             );
     }

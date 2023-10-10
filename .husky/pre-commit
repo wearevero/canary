@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-yarn build && format pretty && format
+yarn build && yarn pretty && yarn format
