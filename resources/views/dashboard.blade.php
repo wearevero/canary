@@ -4,7 +4,6 @@
     <x-slot name="header">
         <h2 class="p-3 border rounded-lg max-w-5xl mx-auto font-semibold bg-indigo-500 content-center text-center items-center justify-center text-white text-xl dark:text-gray-200 leading-tight">
             {!! \Illuminate\Foundation\Inspiring::quote() !!}
-
         </h2>
     </x-slot>
 

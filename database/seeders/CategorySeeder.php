@@ -12,13 +12,13 @@ class CategorySeeder extends Seeder
     {
         DB::table("categorys")->insert([
             [
-                "nama_kategori" => "Ear Stud (Earing Gorok)",
+                "nama_kategori" => "Ear Stud (Earing Kleci)",
                 "id_master_category" => 1,
                 "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
                 "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
             ],
             [
-                "nama_kategori" => "Flex Earing (Earing Kleci)",
+                "nama_kategori" => "Flex Earing (Earing Gorok)",
                 "id_master_category" => 1,
                 "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
                 "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
@@ -36,13 +36,13 @@ class CategorySeeder extends Seeder
                 "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
             ],
             [
-                "nama_kategori" => "Hoop",
+                "nama_kategori" => "Hoop (Earing Gorok)",
                 "id_master_category" => 1,
                 "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
                 "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
             ],
             [
-                "nama_kategori" => "Huggies",
+                "nama_kategori" => "Huggies (Earing Gorok)",
                 "id_master_category" => 1,
                 "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
                 "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
@@ -73,7 +73,55 @@ class CategorySeeder extends Seeder
                 "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
             ],
             [
-                "nama_kategori" => "Tennis Bracelet (Chain)",
+                "nama_kategori" => "Tennis Bracelet (TN)",
+                "id_master_category" => 2,
+                "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
+                "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
+            ],
+            [
+                "nama_kategori" => "Chain",
+                "id_master_category" => 2,
+                "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
+                "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
+            ],
+            [
+                "nama_kategori" => "Serut",
+                "id_master_category" => 2,
+                "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
+                "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
+            ],
+            [
+                "nama_kategori" => "Pallisc",
+                "id_master_category" => 2,
+                "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
+                "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
+            ],
+            [
+                "nama_kategori" => "Spring",
+                "id_master_category" => 2,
+                "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
+                "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
+            ],
+            [
+                "nama_kategori" => "Hollow",
+                "id_master_category" => 2,
+                "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
+                "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
+            ],
+            [
+                "nama_kategori" => "King",
+                "id_master_category" => 2,
+                "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
+                "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
+            ],
+            [
+                "nama_kategori" => "NT",
+                "id_master_category" => 2,
+                "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
+                "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),
+            ],
+            [
+                "nama_kategori" => "Open Cuff",
                 "id_master_category" => 2,
                 "created_at" => Carbon::now()->format("Y-m-d h:i:s"),
                 "updated_at" => Carbon::now()->format("Y-m-d h:i:s"),

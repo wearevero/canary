@@ -3,7 +3,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <h1 class="text-7xl text-center mt-10 mb-20 font-extrabold">List All Products.</h1>
+                    <h1 class="text-9xl uppercase tracking-tight text-center mt-10 mb-20 font-extrabold">Products</h1>
                     <div class="my-6 flex space-x-5 align-middle justify-between items-center">
                         <div class="space-x-5">
                             @if (auth()->user()->role_id == 1)
@@ -31,9 +31,9 @@
                             @endif
                         </form>
                     </div>
-                    <table class="min-w-full mt-5 text-lg text-center font-light">
-                        <thead class="border-b font-bold dark:border-neutral-500">
-                            <tr>
+                    <table class="min-w-full mt-10 text-lg">
+                        <thead class="border-b justify-between font-bold dark:border-neutral-500">
+                            <tr class="text-2xl">
                                 <th scope="col" class="px-6 py-4">No</th>
                                 <th scope="col" class="px-6 py-4">No. Item</th>
                                 <th scope="col" class="px-6 py-4">Main Category</th>
@@ -41,7 +41,7 @@
                                 <th scope="col" class="px-6 py-4">Action</th>
                             </tr>
                         </thead>
-                        <tbody class="">
+                        <tbody class="text-center">
                             @foreach($products as $product)
                             <tr class="border-b font-semibold dark:border-neutral-500">
                                 <td class="whitespace-nowrap px-6 py-4 font-medium">{{ $no++ }}</td>
@@ -52,7 +52,7 @@
                                         <img id="fancy" is-draggable data-selectable src="{{ asset('image/'.$product->image ?? 'tidak ada gambar') }}" alt="{{ $product->no_item }} tidak memiliki gambar" height="80" width="100" id="zoom-image" class="zoom py-2 hover:cursor-pointer mx-auto rounded-md xzoom-gallery" title="{{ $product->no_item }}" />
                                     </a>
                                 </td>
-                                <td class="whitespace-nowrap flex align-middle justify-center space-x-5 py-12 items-center">
+                                <td class="whitespace-nowrap flex space-x-2 my-20 items-center">
                                     <a href="{{ route('products.show', $product->id) }}" title="Detail" class="bg-sky-500/20 border border-sky-500 rounded-lg py-2 px-3">
                                         <x-feathericon-info class="text-sky-500 hover:text-sky-400" />
                                     </a>

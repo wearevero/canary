@@ -7,12 +7,11 @@
             {{ $product->no_item }}
           </h1>
 
-
           {{-- testing input group --}}
           <form method="post" action="{{  route('products.store') }}" enctype="multipart/form-data" class="py-5 text-lg items-center justify-center">
             @csrf
-            <a href="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}">
-              <img xpreview="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}" src="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}" alt="{{ $product->no_item }} tidak memiliki gambar" height="250" width="250" class="text-center xzoom-gallery py-2 hover:cursor-pointer mx-auto rounded-md" title="{{ $product->no_item }}" />
+            <a data-fancybox="gallery" data-caption="{{ $product->no_item }}" href="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}" href="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}">
+              <img id="fancy" src="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}" alt="{{ $product->no_item }} tidak memiliki gambar" height="250" width="250" class="text-center xzoom-gallery py-2 hover:cursor-pointer mx-auto rounded-md" title="{{ $product->no_item }}" />
             </a>
             <h1 class="text-xl mt-10 mb-5 font-bold">
               Detail Data &nbsp;<span class="font-semibold px-3 bg-rose-500/20 rounded-lg text-rose-500 border border-rose-500 text-sm">wajib diisi</span>

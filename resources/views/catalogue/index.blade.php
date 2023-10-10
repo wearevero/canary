@@ -4,13 +4,10 @@
         <!-- Sidebar Category Section -->
         <div class="bg-white dark:bg-gray-800 dark:text-slate-100 shadow-sm h-full w-1/3 px-7 py-5 text-left rounded-lg">
             <div class="max-w-screen-xl min-h-sceen">
-                <div class="flex flex-col items-center">
-                    <h2 class="font-bold text-6xl mt-5 tracking-tight">
+                <div class="flex flex-col">
+                    <h2 class="font-bold uppercase text-6xl mt-5 tracking-tight">
                         Category
                     </h2>
-                    <p class="text-neutral-500 text-xl mt-3">
-                        Main category & Sub category
-                    </p>
                 </div>
                 <div class="grid divide-y px-2 divide-neutral-200 max-w-xl mx-auto mt-8">
                     @foreach ($main_categorys as $main_category)
@@ -54,9 +51,9 @@
         {{-- End --}}
 
         {{-- Card category result --}}
-        <div class="bg-white dark:bg-gray-800 dark:text-slate-100 shadow-sm space-x-4 pr-11 w-2/3 py-10 rounded-lg">
-            <div class="mb-10 py-2 mx-auto justify-center w-2/4">
-                <h1 class="text-6xl text-center font-extrabold">Catalogue</h1>
+        <div class="bg-white dark:bg-gray-800 dark:text-slate-100 shadow-sm space-x-4 pr-11 w-2/3 rounded-lg">
+            <div class="mb-10 mx-auto mt-5 justify-center">
+                <h1 class="text-8xl text-center uppercase font-extrabold">Catalogue</h1>
             </div>
 
             @if ($products->count() > 0)

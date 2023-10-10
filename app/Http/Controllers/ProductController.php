@@ -71,9 +71,7 @@ class ProductController extends Controller
             $input["image"] = "$itemImage";
         }
         Product::create($input);
-
         Alert::success("Berhasil 🎉🥳", "Berhasil menambahkan data " . $request->no_item);
-        session()->flash('success', true);
 
         return redirect()->route("products.index");
     }
@@ -124,12 +122,10 @@ class ProductController extends Controller
             $update["image"] = "$itemImage";
         }
         Product::where("id", $id)->update($update);
-
         Alert::success(
             "Berhasil 🎉🥳",
             "Berhasil mengubah data " . $request->no_item
         );
-        session()->flash('alert_shown', true);
 
         return redirect()->route("products.index");
     }
@@ -138,9 +134,7 @@ class ProductController extends Controller
     {
         $product = Product::findOrfail($id);
         $product->delete();
-
         Alert::success("Berhasil 🎉🥳", "Berhasil menghapus data " . $product->no_item);
-        session()->flash('alert_shown', true);
 
         return redirect()->route("products.index");
     }
