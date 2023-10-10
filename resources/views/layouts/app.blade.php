@@ -10,11 +10,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-    <link rel="stylesheet" type="text/css" href="css/xzoom.css" media="all" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.css" integrity="sha512-0IJ01kDH6fR7Oo1QEcyF+PgSLpefYXuGICVfNNoOseW6+HmsoaHzSZ7BAnwuu6BoK+nSn9WOeh0kiNjPNtGpuw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -37,12 +33,12 @@
         <x-footer />
     </div>
 </body>
-<script type="text/javascript" src="https://unpkg.com/xzoom/dist/xzoom.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.3/viewer.js" integrity="sha512-s42K+c79ocIz9pmPOKe2FHtlrpqKLiLi+kMsd56kNszNvHLiUyDTMue+nXK9ARDOVHCujp++xeEp1/3DObtbrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 <script type="text/javascript">
+    // alert for delete product 
     $('.show_confirmDelete').click(function(event) {
         var form = $(this).closest("form");
         var name = $(this).data("name");
@@ -60,6 +56,8 @@
                 }
             });
     });
+
+    // alert for edit product
     $('.show_confirmEdit').click(function(event) {
         var form = $(this).closest("form");
         var name = $(this).data("name");
@@ -77,6 +75,7 @@
             });
     });
 
+    // autofill sub category input
     $(document).ready(function() {
         $('#main_category').on('change', function() {
             var subCategory = $(this).val();
@@ -106,6 +105,7 @@
         });
     });
 
+    // preview image
     function previewImage(event) {
         var reader = new FileReader();
         reader.onload = function() {
@@ -115,6 +115,17 @@
         }
         reader.readAsDataURL(event.target.files[0]);
     }
+    // image zoom with fancybox
+    Fancybox.bind('[data-fancybox="gallery"]', {
+        Thumbs: {
+            showOnStart: false
+        },
+        Carousel: {
+            Navigation: false,
+            dragToClose: false,
+            DragEvent: false,
+        },
+    });
 </script>
 
 </html>

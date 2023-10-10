@@ -9,7 +9,7 @@
                         Category
                     </h2>
                     <p class="text-neutral-500 text-xl mt-3">
-                        All category & sub category
+                        Main category & Sub category
                     </p>
                 </div>
                 <div class="grid divide-y px-2 divide-neutral-200 max-w-xl mx-auto mt-8">
@@ -58,21 +58,24 @@
             <div class="mb-10 py-2 mx-auto justify-center w-2/4">
                 <h1 class="text-6xl text-center font-extrabold">Catalogue</h1>
             </div>
+
             @if ($products->count() > 0)
             @foreach($products as $product)
-            <div class="border-2 items-center justify-center items-center content-center hover:border-indigo-500 transform transition duration-500 hover:scale-110 hover:shadow-lg float-right border-gray-600 text-center content-center hover:cursor-pointer p-3 inline-block my-3 rounded-lg">
-                <img width="175" class="object-center mx-auto text-center justify-center rounded-lg mb-5" src="{{ asset('image/'.$product->image) }}" alt="Tidak ada gambar" />
-                <span class="border border-rose-500 rounded-lg bg-rose-800/20 text-rose-500 py-1 text-sm px-2 uppercase font-normal">
-                    {{ $product->category->nama_kategori }}
-                </span>
-                <h3 class="mb-5 mt-2 text-md uppercase font-bold">
-                    {{ $product->no_item }}
-                </h3>
-                <a href="{{ route('products.show', $product->id) }}">
-                    <button class="px-3 align-middle py-1 w-full flex mx-auto justify-center rounded-lg bg-sky-800/20 text-sky-500 border ease-in-out hover:bg-blue-800/30 border-blue-500 text-md">
-                        Detail
-                    </button>
-                </a>
+            <div class="border-2 w-[280px] h-[500px] align-middle justify-end items-center justify-center items-center content-center hover:border-indigo-500 transform transition duration-500 hover:scale-110 hover:shadow-lg float-right border-gray-600 text-center content-center hover:cursor-pointer py-5 inline-block my-3 rounded-md">
+                <img width="250" height="175" class="object-cover mx-auto text-center justify-center rounded-lg mb-5" src="{{ asset('image/'.$product->image) }}" alt="Tidak ada gambar" />
+                <div class="inline-block my-auto">
+                    <span class="border border-rose-500 rounded-lg bg-rose-800/20 text-rose-500 py-1 text-sm px-2 uppercase font-normal">
+                        {{ $product->category->nama_kategori }}
+                    </span>
+                    <h3 class="my-3 text-md uppercase font-bold">
+                        {{ $product->no_item }}
+                    </h3>
+                    <a href="{{ route('products.show', $product->id) }}">
+                        <button class="px-3 align-middle py-1 w-full flex mx-auto justify-center rounded-lg bg-sky-800/20 text-sky-500 border ease-in-out hover:bg-blue-800/30 border-blue-500 text-md">
+                            Detail
+                        </button>
+                    </a>
+                </div>
             </div>
             @endforeach
             @else

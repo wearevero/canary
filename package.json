@@ -22,7 +22,6 @@
         "vite": "^4.4.9"
     },
     "dependencies": {
-        "magnificent": "^2.2.4",
         "sweetalert2": "^11.7.31"
     }
 }

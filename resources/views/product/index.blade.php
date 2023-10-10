@@ -48,8 +48,8 @@
                                 <td class="whitespace-nowrap px-6 py-4">{{ $product->no_item }}</td>
                                 <td class="whitespace-nowrap px-6 py-4">{{ $product->main_category->nama_category }}</td>
                                 <td>
-                                    <a href="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}">
-                                        <img mag-thumb="drag" src="{{ asset('image/'.$product->image ?? 'tidak ada gambar') }}" alt="{{ $product->no_item }} tidak memiliki gambar" height="80" width="100" class="py-2 hover:cursor-pointer mx-auto rounded-md" title="{{ $product->no_item }}" />
+                                    <a data-fancybox="gallery" data-caption="{{ $product->no_item }}" href="{{ asset('image/'.$product->image ?? 'tidak ada gambar')}}">
+                                        <img id="fancy" is-draggable data-selectable src="{{ asset('image/'.$product->image ?? 'tidak ada gambar') }}" alt="{{ $product->no_item }} tidak memiliki gambar" height="80" width="100" id="zoom-image" class="zoom py-2 hover:cursor-pointer mx-auto rounded-md xzoom-gallery" title="{{ $product->no_item }}" />
                                     </a>
                                 </td>
                                 <td class="whitespace-nowrap flex align-middle justify-center space-x-5 py-12 items-center">

@@ -12,7 +12,7 @@
                         Category
                     </h2>
                     <p class="text-neutral-500 text-xl mt-3">
-                        All category & sub category
+                        Main category & Sub category
                     </p>
                 </div>
                 <div class="grid divide-y px-2 divide-neutral-200 max-w-xl mx-auto mt-8">
